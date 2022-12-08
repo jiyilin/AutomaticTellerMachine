@@ -1,6 +1,10 @@
 ﻿#pragma once
 
+#ifndef AutomaticTellerMachine_H
+#define AutomaticTellerMachine_H
+
 #include <QtWidgets/QMainWindow>
+
 #include "ui_AutomaticTellerMachine.h"
 #include"Client.h"
 #include"AdminSide.h"
@@ -10,7 +14,7 @@ class AutomaticTellerMachine : public QMainWindow
     Q_OBJECT
 
 public:
-    AutomaticTellerMachine(QWidget *parent = nullptr);
+    AutomaticTellerMachine(QWidget* parent = nullptr);
     ~AutomaticTellerMachine();
 
 private slots:
@@ -23,3 +27,5 @@ private:
     Client* client;
     AdminSide* adminSide;
 };
+
+#endif // !AutomaticTellerMachine_H

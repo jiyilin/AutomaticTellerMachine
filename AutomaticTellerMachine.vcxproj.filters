@@ -49,12 +49,24 @@
     <ClCompile Include="AdminSide.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Administrator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Human.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Procedure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Administrator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

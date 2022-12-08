@@ -1,5 +1,8 @@
 ﻿#pragma once
 
+#ifndef Procedure_H
+#define Procedure_H
+
 #include"AutomaticTellerMachine.h"
 
 class Procedure
@@ -15,3 +18,6 @@ public:
 	void SetMainWindowShow();
 	void SetMainWindowHide();
 };
+
+
+#endif // !Procedure_H
