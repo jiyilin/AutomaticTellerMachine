@@ -3,8 +3,7 @@
 constexpr auto AdministratorID = "福州大学至诚学院";
 constexpr auto AdministratorPassword = "123456";
 
-Administrator::Administrator()
-{
+Administrator::Administrator(){
 	this->id = AdministratorID;
 	this->password = AdministratorPassword;
 }
