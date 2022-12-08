@@ -209,22 +209,6 @@
  </resources>
  <connections>
   <connection>
-   <sender>Exit</sender>
-   <signal>clicked()</signal>
-   <receiver>AutomaticTellerMachineClass</receiver>
-   <slot>on_ExitButton_click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>640</x>
-     <y>547</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>738</x>
-     <y>585</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>Client</sender>
    <signal>clicked()</signal>
    <receiver>AutomaticTellerMachineClass</receiver>
@@ -237,6 +221,22 @@
     <hint type="destinationlabel">
      <x>734</x>
      <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit</sender>
+   <signal>clicked()</signal>
+   <receiver>AutomaticTellerMachineClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>617</x>
+     <y>557</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>617</x>
+     <y>362</y>
     </hint>
    </hints>
   </connection>

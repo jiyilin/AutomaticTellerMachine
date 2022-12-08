@@ -13,7 +13,6 @@ public:
     ~AutomaticTellerMachine();
 
 private slots:
-    void on_ExitButton_click();
     void on_ClientButton_click();
 
 private:

@@ -7,10 +7,6 @@ AutomaticTellerMachine::AutomaticTellerMachine(QWidget *parent): QMainWindow(par
 
 AutomaticTellerMachine::~AutomaticTellerMachine() = default;
 
-void AutomaticTellerMachine::on_ExitButton_click(){
-    this->hide();
-}
-
 void AutomaticTellerMachine::on_ClientButton_click(){
     client->show();
 }
