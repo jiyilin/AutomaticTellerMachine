@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        MessageBox(nullptr, L"ERROR", L"程序启动失败，无法创建窗口!!!", MB_OK);
+        MessageBox(nullptr, L"程序启动失败，无法创建窗口!!!", L"ERROR", MB_OK);
     }
 
     return QApplication::exec();
