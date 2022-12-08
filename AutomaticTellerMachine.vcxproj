@@ -85,9 +85,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdminSide.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Procedure.cpp" />
     <QtRcc Include="AutomaticTellerMachine.qrc" />
+    <QtUic Include="AdminSide.ui" />
     <QtUic Include="AutomaticTellerMachine.ui" />
     <QtMoc Include="AutomaticTellerMachine.h" />
     <ClCompile Include="AutomaticTellerMachine.cpp" />
@@ -99,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Client.h" />
+    <QtMoc Include="AdminSide.h" />
     <ClInclude Include="Procedure.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

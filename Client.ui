@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1487</width>
-    <height>726</height>
+    <width>1478</width>
+    <height>729</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -108,8 +108,140 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QFrame" name="Menu">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>281</width>
+       <height>611</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>251</width>
+        <height>620</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="MenuSearch">
+       <item>
+        <widget class="QPushButton" name="UserDeposit">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>26</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>存款</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="UserWithdrawal">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>26</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>取款</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="USerTransfer">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>26</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>转账</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="UserHistory">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>26</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>历史记录</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="UserChangePassword">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>26</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>修改密码</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="UserFreeze">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>26</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>冻结账户</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="UserLogout">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>26</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>注销账户</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="UserExit">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>26</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>退出</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
    </widget>
-   <widget class="QFrame" name="frame_2">
+   <widget class="QFrame" name="Background">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -127,7 +259,425 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QFrame" name="LoadWindow">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1201</width>
+       <height>691</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/AutomaticTellerMachine/main.png);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="LoadSure">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>470</y>
+        <width>381</width>
+        <height>69</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>登录</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>170</y>
+        <width>721</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="LoadInput">
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="LoadIdInput">
+         <property name="font">
+          <font>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="LoadPasswordLable">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>密码</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="LoadIdLable">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>账号</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="LoadPasswordInput">
+         <property name="font">
+          <font>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QFrame" name="RegisteredWindow">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1201</width>
+        <height>691</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/AutomaticTellerMachine/main.png);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QWidget" name="gridLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>150</y>
+         <width>761</width>
+         <height>300</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="Registeredinput">
+        <item row="3" column="2">
+         <widget class="QLineEdit" name="RegisteredPasswordCheckInput">
+          <property name="font">
+           <font>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="RegisteredIdLable">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>账号：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="RegisteredIdInput">
+          <property name="font">
+           <font>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="RegisteredPasswordInput">
+          <property name="font">
+           <font>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="passwordLable_4">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>身份证：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="passwordLable_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>密码：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="passwordLable_3">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>确认密码：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="RegisteredIdCardInput">
+          <property name="font">
+           <font>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="RegisteredPushButton">
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>480</y>
+         <width>381</width>
+         <height>69</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>36</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>注册</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="LoadDashBoadWindow">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1201</width>
+         <height>691</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/AutomaticTellerMachine/main.png);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="formLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>90</y>
+          <width>711</width>
+          <height>431</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="LoadDashBoard">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>账号：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>余额：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>时间：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="LoadDashBoardId">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="LoadDashBoardCash">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="LoadDashBoardState">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLabel" name="LoadDashBoardTime">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="3" column="1">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="5" column="1">
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <zorder>gridLayoutWidget</zorder>
+     <zorder>LoadSure</zorder>
+     <zorder>RegisteredWindow</zorder>
+    </widget>
    </widget>
+   <zorder>Background</zorder>
+   <zorder>head</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -148,7 +698,7 @@
    <sender>Exit</sender>
    <signal>clicked()</signal>
    <receiver>ClientClass</receiver>
-   <slot>hide()</slot>
+   <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>145</x>
@@ -157,6 +707,102 @@
     <hint type="destinationlabel">
      <x>743</x>
      <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Login</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Registered</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>404</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>542</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>473</x>
+     <y>502</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Login</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>340</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>549</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Registered</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>386</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
     </hint>
    </hints>
   </connection>

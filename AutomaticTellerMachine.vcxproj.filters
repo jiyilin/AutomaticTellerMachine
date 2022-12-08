@@ -46,6 +46,9 @@
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdminSide.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -59,9 +62,15 @@
     <QtMoc Include="Client.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="AdminSide.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Client.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="AdminSide.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
