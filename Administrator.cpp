@@ -1,6 +1,6 @@
-#include "Administrator.h"
+ï»¿#include "Administrator.h"
 
-constexpr auto AdministratorID = "¸£Öİ´óÑ§ÖÁ³ÏÑ§Ôº";
+constexpr auto AdministratorID = "ç¦å·å¤§å­¦è‡³è¯šå­¦é™¢";
 constexpr auto AdministratorPassword = "123456";
 
 Administrator::Administrator(){
@@ -8,7 +8,7 @@ Administrator::Administrator(){
 	this->password = AdministratorPassword;
 }
 
-bool Administrator::AdminstratorLoad(string &name, string &key){
+bool Administrator::AdminstratorLoad(std::string &name, std::string &key){
 	if (name != this->id || key!=this->password)
 	{
 		return false;

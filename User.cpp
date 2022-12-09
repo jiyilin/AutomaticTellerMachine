@@ -7,7 +7,7 @@ User::User()
 	state = false;
 }
 
-User::User(string& name, string& key, string& idCard, double& number)
+User::User(std::string& name, std::string& key, std::string& idCard, double& number)
 {
 	this->id = name;
 	this->identityCard = idCard;
@@ -16,17 +16,17 @@ User::User(string& name, string& key, string& idCard, double& number)
 	this->state = true;
 }
 
-string User::Gain_User_Id()
+std::string User::Gain_User_Id()
 {
 	return this->id;
 }
 
-string User::Gain_User_Password()
+std::string User::Gain_User_Password()
 {
 	return this->password;
 }
 
-string User::Gain_User_IdentityCard()
+std::string User::Gain_User_IdentityCard()
 {
 	return this->identityCard;
 }
@@ -41,7 +41,7 @@ bool User::Gain_User_State()
 	return this->state;
 }
 
-bool User::SetUserPassword(string& key)
+bool User::SetUserPassword(std::string& key)
 {
 	if (key.length() < 5 || key.length() > 12 || key == this->password)
 	{

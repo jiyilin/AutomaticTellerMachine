@@ -4,15 +4,13 @@
 #define Human_H
 
 #include<string>
-#include<iostream>
 
-using namespace std;
 
 class Human
 {
 protected:
-	string id;
-	string password;
+	std::string id;
+	std::string password;
 public:
 	Human();
 };

@@ -8,20 +8,20 @@
 class User:private Human
 {
 private:
-	string identityCard;
+	std::string identityCard;
 	double amount;
 	bool state;
 public:
 	User();
-	User(string &name, string &key, string &idCard, double &number);
+	User(std::string &name, std::string &key, std::string &idCard, double &number);
 
-	string Gain_User_Id();
-	string Gain_User_Password();
-	string Gain_User_IdentityCard();
+	std::string Gain_User_Id();
+	std::string Gain_User_Password();
+	std::string Gain_User_IdentityCard();
 	double Gain_USer_Amount();
 	bool Gain_User_State();
 
-	bool SetUserPassword(string &key);
+	bool SetUserPassword(std::string &key);
 	bool SetUserMoney(double pay, bool IsPush);
 	bool SetUserCanUse(bool lock);
 };
