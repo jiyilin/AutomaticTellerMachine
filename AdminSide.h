@@ -23,6 +23,8 @@ private slots:
 
 	void on_FundFillingButton_click();
 
+	void on_PoolEmptyButton_click();
+
 private:
 	Ui::AdminSideClass ui;
 	Administrator administrator;

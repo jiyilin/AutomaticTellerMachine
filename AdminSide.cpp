@@ -72,3 +72,14 @@ void AdminSide::on_FundFillingButton_click()
 		msgBox.exec();
 	}
 }
+
+void AdminSide::on_PoolEmptyButton_click()
+{
+	QMessageBox msgBox(QMessageBox::Warning, "Warning", "确认清空资金库吗", QMessageBox::Ok | QMessageBox::Cancel, this);
+	if (msgBox.exec() == QMessageBox::Ok)
+	{
+		ATM->EmptyThePool();
+		QMessageBox msgBox1(QMessageBox::Warning, "SUCCESS", "已完成资金库清空", QMessageBox::Ok, this);
+		msgBox1.exec();
+	}
+}

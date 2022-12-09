@@ -741,9 +741,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>PoolEmptyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AdminSideClass</receiver>
+   <slot>on_PoolEmptyButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>730</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_SignButton_click()</slot>
   <slot>on_FundFillingButton_click()</slot>
+  <slot>on_PoolEmptyButton_click()</slot>
  </slots>
 </ui>
