@@ -21,6 +21,8 @@ public:
 private slots:
 	void on_SignButton_click();
 
+	void on_FundFillingButton_click();
+
 private:
 	Ui::AdminSideClass ui;
 	Administrator administrator;

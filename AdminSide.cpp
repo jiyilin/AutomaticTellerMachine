@@ -16,6 +16,7 @@ AdminSide::AdminSide(QWidget *parent): QMainWindow(parent)
 	ui.LoadWindow->hide();
 	ui.MenuWindow->hide();
 	ui.LoadDashboardWindow->hide();
+	ui.FundFillingWindow->hide();
 }
 
 AdminSide::~AdminSide() = default;
@@ -51,5 +52,23 @@ void AdminSide::on_SignButton_click()
 
 		QDateTime time = QDateTime::currentDateTime();
 		ui.LoadDashboardWindowTime->setText(time.toString("yyyy-MM-dd hh:mm:ss"));
+	}
+}
+
+void AdminSide::on_FundFillingButton_click()
+{
+	std::string input = ui.CashInput->text().toStdString();
+	std::stringstream stream(input);
+	double key;
+	stream >> key;
+	if (!ATM->Push_CapitalPools(key))
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "资金输入错误，填充失败", QMessageBox::Ok, this);
+		msgBox.exec();
+	}
+	else
+	{
+		QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", "资金填充成功", QMessageBox::Ok, this);
+		msgBox.exec();
 	}
 }
