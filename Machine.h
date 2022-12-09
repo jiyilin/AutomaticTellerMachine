@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #ifndef Machine_H
 #define Machine_H
@@ -6,13 +6,13 @@
 class Machine
 {
 private:
-	double capitalPools;  // ×Ê½ğ³Ø
+	double capitalPools;  // èµ„é‡‘æ± 
 public:
     Machine();
-    double Gain_CapitalPools();          // »ñÈ¡×Ê½ğ³ØÊıÖµ
-    bool Push_CapitalPools(double eval); // ×Ê½ğ´æÈë×Ê½ğ³Ø
-    bool Pop_CapitalPools(double eval);  // ×Ê½ğÈ¡³ö×Ê½ğ³Ø
-    void EmptyThePool();                 // Çå¿Õ×Ê½ğ³Ø
+    double Gain_CapitalPools();          // è·å–èµ„é‡‘æ± æ•°å€¼
+    bool Push_CapitalPools(double eval); // èµ„é‡‘å­˜å…¥èµ„é‡‘æ± 
+    bool Pop_CapitalPools(double eval);  // èµ„é‡‘å–å‡ºèµ„é‡‘æ± 
+    void EmptyThePool();                 // æ¸…ç©ºèµ„é‡‘æ± 
 };
 
 //Port
