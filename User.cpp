@@ -7,7 +7,7 @@ User::User()
 	state = false;
 }
 
-User::User(std::string& name, std::string& key, std::string& idCard, double& number)
+User::User(std::string name, std::string key, std::string idCard, double number)
 {
 	this->id = name;
 	this->identityCard = idCard;
