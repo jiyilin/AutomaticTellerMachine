@@ -2,6 +2,9 @@
 #include <iostream>
 #include <sstream>
 #include<qstring.h>
+#include<qtimer.h>
+#include<qtimeline.h>
+#include<qtimezone.h>
 
 #include "AdminSide.h"
 
@@ -45,5 +48,8 @@ void AdminSide::on_SignButton_click()
 		std::string key;
 		stream >> key;
 		ui.PoolExistingFunds->setText(QString::fromStdString(key));
+
+		QDateTime time = QDateTime::currentDateTime();
+		ui.LoadDashboardWindowTime->setText(time.toString("yyyy-MM-dd hh:mm:ss"));
 	}
 }
