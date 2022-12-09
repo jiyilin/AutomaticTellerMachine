@@ -1,7 +1,7 @@
 #include "Machine.h"
 
-constexpr auto INIT_Capital_Pools = 100000.0;;
-constexpr auto MAX_Capital_Pools = 1000000.0;;
+constexpr auto INIT_Capital_Pools = 100000.0;
+constexpr auto MAX_Capital_Pools = 1000000.0;
 
 Machine atmMachine;
 
