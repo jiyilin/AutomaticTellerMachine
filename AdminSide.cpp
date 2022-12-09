@@ -68,7 +68,11 @@ void AdminSide::on_FundFillingButton_click()
 	}
 	else
 	{
-		QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", "资金填充成功", QMessageBox::Ok, this);
+		double cash = ATM->Gain_CapitalPools();
+		std::string process("资金填充成功,资金池现存：");
+		process = process + std::to_string(cash);
+		auto output = QString::fromStdString(process);
+		QMessageBox msgBox(QMessageBox::Warning, "SUCCESS",output , QMessageBox::Ok, this);
 		msgBox.exec();
 	}
 }
