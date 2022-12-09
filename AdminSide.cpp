@@ -19,6 +19,7 @@ void AdminSide::on_SignButton_click()
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "账号与密码不能为空", QMessageBox::Ok, this);
 		msgBox.exec();
+		return;
 	}
 	string id = ui.LoadIdInput->text().toStdString();
 	string password = ui.LoadPasswordInput->text().toStdString();
@@ -26,14 +27,11 @@ void AdminSide::on_SignButton_click()
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "账号或密码错误", QMessageBox::Ok, this);
 		msgBox.exec();
-		ui.LoadIdInput->setText("");
-		ui.LoadPasswordInput->setText("");
 	}
 	else
 	{
 		ui.MenuWindow->show();
 		ui.LoadDashboardWindow->show();
-		ui.LoadIdInput->setText("");
-		ui.LoadPasswordInput->setText("");
+		ui.LoadWindow->hide();
 	}
 }

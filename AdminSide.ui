@@ -541,6 +541,54 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>SignButton</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadPasswordInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>915</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>851</x>
+     <y>312</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SignButton</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadIdInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>964</x>
+     <y>517</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>978</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>MenuWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>135</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_SignButton_click()</slot>

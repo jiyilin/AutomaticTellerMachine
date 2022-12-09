@@ -806,5 +806,37 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>LoadSure</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadIdInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>941</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadSure</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadPasswordInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>941</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>
