@@ -9,6 +9,7 @@ private:
 	double capitalPools;  // 资金池
 public:
     Machine();
+    ~Machine();
     double Gain_CapitalPools();          // 获取资金池数值
     bool Push_CapitalPools(double eval); // 资金存入资金池
     bool Pop_CapitalPools(double eval);  // 资金取出资金池
