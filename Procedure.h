@@ -22,5 +22,4 @@ public:
 	bool EngineStarts();
 };
 
-
 #endif // !Procedure_H

@@ -23,5 +23,4 @@ private:
 	Ui::ClientClass ui;
 };
 
-
 #endif // !Client_H

@@ -26,5 +26,4 @@ public:
 	bool SetUserCanUse(bool lock);
 };
 
-
 #endif // !User_H
