@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifndef Client_H
 #define Client_H
@@ -14,6 +14,10 @@ class Client : public QMainWindow
 public:
 	Client(QWidget* parent = nullptr);
 	~Client();
+
+private slots:
+
+	void on_RegisteredPushButton_click();
 
 private:
 	Ui::ClientClass ui;

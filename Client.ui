@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1478</width>
-    <height>729</height>
+    <height>726</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -382,20 +382,8 @@
         </rect>
        </property>
        <layout class="QGridLayout" name="Registeredinput">
-        <item row="3" column="2">
-         <widget class="QLineEdit" name="RegisteredPasswordCheckInput">
-          <property name="font">
-           <font>
-            <pointsize>36</pointsize>
-           </font>
-          </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="RegisteredIdLable">
+        <item row="1" column="1">
+         <widget class="QLabel" name="passwordLable_4">
           <property name="font">
            <font>
             <family>微软雅黑</family>
@@ -403,12 +391,12 @@
            </font>
           </property>
           <property name="text">
-           <string>账号：</string>
+           <string>身份证：</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="2">
-         <widget class="QLineEdit" name="RegisteredIdInput">
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="RegisteredIdCardInput">
           <property name="font">
            <font>
             <pointsize>36</pointsize>
@@ -428,32 +416,6 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="passwordLable_4">
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>36</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>身份证：</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="passwordLable_2">
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>36</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>密码：</string>
-          </property>
-         </widget>
-        </item>
         <item row="3" column="1">
          <widget class="QLabel" name="passwordLable_3">
           <property name="font">
@@ -467,12 +429,50 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
-         <widget class="QLineEdit" name="RegisteredIdCardInput">
+        <item row="0" column="1">
+         <widget class="QLabel" name="RegisteredIdLable">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>账号：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLineEdit" name="RegisteredPasswordCheckInput">
           <property name="font">
            <font>
             <pointsize>36</pointsize>
            </font>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="RegisteredIdInput">
+          <property name="font">
+           <font>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="passwordLable_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>密码：</string>
           </property>
          </widget>
         </item>
@@ -838,5 +838,88 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>RegisteredPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_RegisteredPushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>531</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>588</x>
+     <y>725</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RegisteredPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredIdInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1023</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RegisteredPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredIdCardInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1023</x>
+     <y>273</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RegisteredPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredPasswordInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1023</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RegisteredPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredPasswordCheckInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1023</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>on_RegisteredPushButton_click()</slot>
+ </slots>
 </ui>
