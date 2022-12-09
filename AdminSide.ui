@@ -134,23 +134,39 @@
         <x>0</x>
         <y>0</y>
         <width>1161</width>
-        <height>701</height>
+        <height>691</height>
        </rect>
       </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/AutomaticTellerMachine/main.png);</string>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
       <widget class="QWidget" name="formLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>190</y>
+         <x>180</x>
+         <y>180</y>
          <width>811</width>
-         <height>136</height>
+         <height>206</height>
         </rect>
        </property>
        <layout class="QFormLayout" name="formLayout">
-        <item row="0" column="0">
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
          <widget class="QLabel" name="label">
           <property name="font">
            <font>
@@ -159,27 +175,11 @@
            </font>
           </property>
           <property name="text">
-           <string>资金池现有现金：</string>
+           <string>现存资金：</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-            <pointsize>36</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>时间：</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
+        <item row="1" column="1">
          <widget class="QLabel" name="PoolExistingFunds">
           <property name="font">
            <font>
@@ -192,7 +192,33 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="2" column="1">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>时间：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
          <widget class="QLabel" name="LoadDashboardWindowTime">
           <property name="font">
            <font>
@@ -204,6 +230,19 @@
            <string/>
           </property>
          </widget>
+        </item>
+        <item row="4" column="1">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
@@ -556,6 +595,22 @@
    <sender>LoadExit</sender>
    <signal>clicked()</signal>
    <receiver>LoadDashboardWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">

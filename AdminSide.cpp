@@ -35,6 +35,8 @@ void AdminSide::on_SignButton_click()
 	else
 	{
 		ui.MenuWindow->show();
+		ui.backgroundWindow->show();
+		ui.LoadWindow->show();
 		ui.LoadDashboardWindow->show();
 
 		double cash = ATM->Gain_CapitalPools();
@@ -43,7 +45,5 @@ void AdminSide::on_SignButton_click()
 		std::string key;
 		stream >> key;
 		ui.PoolExistingFunds->setText(QString::fromStdString(key));
-
-		ui.LoadWindow->hide();
 	}
 }
