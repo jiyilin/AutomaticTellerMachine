@@ -2,6 +2,7 @@
 
 Client::Client(QWidget *parent): QMainWindow(parent){
 	ui.setupUi(this);
+
 	ui.LoadWindow->hide();
 	ui.RegisteredWindow->hide();
 	ui.Menu->hide();
