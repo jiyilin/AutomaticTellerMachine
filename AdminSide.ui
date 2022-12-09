@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1439</width>
-    <height>727</height>
+    <height>728</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -609,7 +609,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>684</x>
-     <y>717</y>
+     <y>716</y>
     </hint>
    </hints>
   </connection>
@@ -705,7 +705,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>736</x>
-     <y>732</y>
+     <y>716</y>
     </hint>
    </hints>
   </connection>
@@ -753,7 +753,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>224</x>
-     <y>730</y>
+     <y>716</y>
     </hint>
    </hints>
   </connection>
