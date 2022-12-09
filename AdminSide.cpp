@@ -1,11 +1,15 @@
-﻿#include "AdminSide.h"
-#include <string>
+﻿#include <string>
 #include <iostream>
-using namespace std;
+#include <sstream>
+#include<qstring.h>
+
+#include "AdminSide.h"
 
 AdminSide::AdminSide(QWidget *parent): QMainWindow(parent)
 {
 	ui.setupUi(this);
+	this->ATM = ATMPort();
+
 	ui.LoadWindow->hide();
 	ui.MenuWindow->hide();
 	ui.LoadDashboardWindow->hide();
@@ -21,8 +25,8 @@ void AdminSide::on_SignButton_click()
 		msgBox.exec();
 		return;
 	}
-	string id = ui.LoadIdInput->text().toStdString();
-	string password = ui.LoadPasswordInput->text().toStdString();
+	std::string id = ui.LoadIdInput->text().toStdString();
+	std::string password = ui.LoadPasswordInput->text().toStdString();
 	if (!administrator.AdminstratorLoad(id,password))
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "账号或密码错误", QMessageBox::Ok, this);
@@ -32,6 +36,14 @@ void AdminSide::on_SignButton_click()
 	{
 		ui.MenuWindow->show();
 		ui.LoadDashboardWindow->show();
+
+		double cash = ATM->Gain_CapitalPools();
+		std::stringstream stream;
+		stream << cash;
+		std::string key;
+		stream >> key;
+		ui.PoolExistingFunds->setText(QString::fromStdString(key));
+
 		ui.LoadWindow->hide();
 	}
 }

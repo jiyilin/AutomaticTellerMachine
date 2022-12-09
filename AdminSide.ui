@@ -60,24 +60,16 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="LoadInput">
-       <item row="0" column="2">
-        <widget class="QLineEdit" name="LoadIdInput">
+       <item row="1" column="1">
+        <widget class="QLabel" name="LoadPasswordLable">
          <property name="font">
           <font>
+           <family>微软雅黑</family>
            <pointsize>36</pointsize>
           </font>
          </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLineEdit" name="LoadPasswordInput">
-         <property name="font">
-          <font>
-           <pointsize>36</pointsize>
-          </font>
-         </property>
-         <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
+         <property name="text">
+          <string>密码</string>
          </property>
         </widget>
        </item>
@@ -94,16 +86,24 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="LoadPasswordLable">
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="LoadPasswordInput">
          <property name="font">
           <font>
-           <family>微软雅黑</family>
            <pointsize>36</pointsize>
           </font>
          </property>
-         <property name="text">
-          <string>密码</string>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="LoadIdInput">
+         <property name="font">
+          <font>
+           <pointsize>36</pointsize>
+          </font>
          </property>
         </widget>
        </item>
@@ -140,95 +140,74 @@
       <property name="styleSheet">
        <string notr="true">background-image: url(:/AutomaticTellerMachine/main.png);</string>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLabel" name="label">
+      <widget class="QWidget" name="formLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>160</y>
-         <width>351</width>
-         <height>91</height>
+         <x>190</x>
+         <y>190</y>
+         <width>811</width>
+         <height>136</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>微软雅黑</family>
-         <pointsize>36</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>资金池现有现金：</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>230</x>
-         <y>260</y>
-         <width>351</width>
-         <height>91</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>微软雅黑</family>
-         <pointsize>36</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>时间：</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="PoolExistingFunds">
-       <property name="geometry">
-        <rect>
-         <x>600</x>
-         <y>160</y>
-         <width>351</width>
-         <height>91</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>微软雅黑</family>
-         <pointsize>36</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="LoadDashboardWindowTime">
-       <property name="geometry">
-        <rect>
-         <x>600</x>
-         <y>260</y>
-         <width>351</width>
-         <height>91</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>微软雅黑</family>
-         <pointsize>36</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>资金池现有现金：</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>时间：</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="PoolExistingFunds">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="LoadDashboardWindowTime">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>36</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
-     <zorder>LoadDashboardWindow</zorder>
-     <zorder>gridLayoutWidget</zorder>
-     <zorder>SignButton</zorder>
     </widget>
    </widget>
    <widget class="QFrame" name="HeadWindow">
@@ -510,22 +489,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>LoadExit</sender>
-   <signal>clicked()</signal>
-   <receiver>LoadDashboardWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>140</x>
-     <y>664</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>860</x>
-     <y>362</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>SignButton</sender>
    <signal>clicked()</signal>
    <receiver>AdminSideClass</receiver>
@@ -586,6 +549,22 @@
     <hint type="destinationlabel">
      <x>135</x>
      <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadDashboardWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>362</y>
     </hint>
    </hints>
   </connection>
