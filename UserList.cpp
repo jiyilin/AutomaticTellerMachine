@@ -61,3 +61,110 @@ void UserList::pop_front()
 	this->head->next = this->head->next->next;
 }
 
+void UserList::sort()
+{
+	if (this->head->next == nullptr)
+	{
+		return;
+	}
+	User* process;
+	for (auto left = this->head->next; left != nullptr; left = left->next)
+	{
+		for (auto right = left; right != nullptr; right = right->next)
+		{
+			if (left->data->Gain_User_Id() > right->data->Gain_User_Id())
+			{
+				process = left->data;
+				left->data = right->data;
+				right->data = process;
+			}
+		}
+	}
+}
+
+User* UserList::gain_center()
+{
+	int number = this->size()/2;
+	auto search = this->head;
+	int key = 0;
+	while (key < number)
+	{
+		key++;
+		search = search->next;
+	}
+	return search->data;
+}
+
+int UserList::size()
+{
+	int key = 0;
+	auto search = this->head;
+	while (search->next != nullptr)
+	{
+		search = search->next;
+		key++;
+	}
+	return key;
+}
+
+void UserList::split(UserList* &left, UserList* &right, User* &center)
+{
+	center = this->gain_center();
+	left = new UserList;
+	right = new UserList;
+	auto search = this->head;
+	bool isLeft = true;
+	while (search->next!=nullptr)
+	{
+		search = search->next;
+		if (search->data->Gain_User_Id() == center->Gain_User_Id())
+		{
+			isLeft = false;
+		}
+		else if(isLeft == true)
+		{
+			auto node = User(search->data->Gain_User_Id(), search->data->Gain_User_IdentityCard(),
+				search->data->Gain_User_Password(), search->data->Gain_USer_Amount(), search->data->Gain_User_State());
+			left->push_back(node);
+		}
+		else
+		{
+			auto node = User(search->data->Gain_User_Id(), search->data->Gain_User_IdentityCard(),
+				search->data->Gain_User_Password(), search->data->Gain_USer_Amount(), search->data->Gain_User_State());
+			right->push_back(node);
+		}
+	}
+}
+
+
+
+bool UserList::empty()
+{
+	if (this->head->next == nullptr)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool UserList::eraser(std::string lock)
+{
+	if (this->empty())
+	{
+		return false;
+	}
+	auto search = this->head->next;
+	auto SearchBefore = this->head;
+	while (search->next!=nullptr)
+	{
+		SearchBefore = search;
+		search = search->next;
+		if (search->data->Gain_User_Id()==lock)
+		{
+			SearchBefore->next = search->next;
+			return true;
+		}
+	}
+	return false;
+}
+

@@ -14,6 +14,7 @@ private:
 public:
 	User();
 	User(std::string name, std::string key, std::string idCard, double number);
+	User(std::string name, std::string key, std::string idCard, double number,bool is);
 
 	std::string Gain_User_Id();
 	std::string Gain_User_Password();

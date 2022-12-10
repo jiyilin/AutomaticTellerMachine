@@ -16,6 +16,15 @@ User::User(std::string name, std::string key, std::string idCard, double number)
 	this->state = true;
 }
 
+User::User(std::string name, std::string key, std::string idCard, double number, bool is)
+{
+	this->id = name;
+	this->identityCard = idCard;
+	this->password = key;
+	this->amount = number;
+	this->state = is;
+}
+
 std::string User::Gain_User_Id()
 {
 	return this->id;

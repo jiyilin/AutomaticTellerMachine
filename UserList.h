@@ -3,6 +3,7 @@
 #ifndef UserList_H
 #define UserList_H
 
+#include<string>
 #include "User.h"
 
 class UserList
@@ -20,8 +21,9 @@ public:
 	void sort();
 	User* gain_center();
 	int size();
-	void split(User* left, User* right, User* center);
+	void split(UserList* &left, UserList* &right, User* &center);
 	bool empty();
+	bool eraser(std::string lock);
 };
 
 #endif // !UserList_H
