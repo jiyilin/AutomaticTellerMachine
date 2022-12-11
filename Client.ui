@@ -827,8 +827,8 @@
    <slot>on_RegisteredPushButton_click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1190</x>
-     <y>541</y>
+     <x>1080</x>
+     <y>553</y>
     </hint>
     <hint type="destinationlabel">
      <x>588</x>
@@ -843,12 +843,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1350</x>
-     <y>536</y>
+     <x>1080</x>
+     <y>548</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1483</x>
-     <y>208</y>
+     <x>1279</x>
+     <y>224</y>
     </hint>
    </hints>
   </connection>
@@ -859,12 +859,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1350</x>
-     <y>536</y>
+     <x>1080</x>
+     <y>548</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1483</x>
-     <y>283</y>
+     <x>1279</x>
+     <y>306</y>
     </hint>
    </hints>
   </connection>
@@ -875,12 +875,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1350</x>
-     <y>536</y>
+     <x>1080</x>
+     <y>548</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1483</x>
-     <y>358</y>
+     <x>1279</x>
+     <y>381</y>
     </hint>
    </hints>
   </connection>
@@ -891,12 +891,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1350</x>
-     <y>536</y>
+     <x>1080</x>
+     <y>548</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1483</x>
-     <y>433</y>
+     <x>1279</x>
+     <y>456</y>
     </hint>
    </hints>
   </connection>
@@ -980,9 +980,42 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>UserExit</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_UserExitButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>187</x>
+     <y>666</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>777</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserExit</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>667</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>738</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_RegisteredPushButton_click()</slot>
   <slot>on_LoadSureButton_click()</slot>
+  <slot>on_UserExitButton_click()</slot>
  </slots>
 </ui>

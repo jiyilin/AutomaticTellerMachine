@@ -121,6 +121,7 @@ void Client::on_LoadSureButton_click()
 		{
 			ui.RegisteredWindow->show();
 			ui.LoadDashBoadWindow->show();
+			ui.Menu->show();
 
 			QString id = QString::fromStdString(userNow->Gain_User_Id());
 			ui.LoadDashBoardId->setText(id);
@@ -159,4 +160,26 @@ void Client::on_LoadSureButton_click()
 			}
 		}
 	}
+}
+
+void Client::on_UserExitButton_click()
+{
+	std::stringstream stream;
+	stream << userNow->Gain_USer_Amount();
+	std::string process;
+	stream >> process;
+
+	std::ofstream write;
+	write.open("./data/UsersData.txt", std::ios_base::app);
+	if (userNow->Gain_User_State() == true)
+	{
+		write << userNow->Gain_User_Id() << " " << userNow->Gain_User_IdentityCard() << " " <<
+			userNow->Gain_User_Password() << " " << process << " " << "true" << std::endl;
+	}
+	else
+	{
+		write << userNow->Gain_User_Id() << " " << userNow->Gain_User_IdentityCard() << " " <<
+			userNow->Gain_User_Password() << " " << process << " " << "false" << std::endl;
+	}
+	write.close();
 }
