@@ -305,16 +305,7 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="LoadInput">
-       <item row="0" column="2">
-        <widget class="QLineEdit" name="LoadIdInput">
-         <property name="font">
-          <font>
-           <pointsize>36</pointsize>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
+       <item row="3" column="1">
         <widget class="QLabel" name="LoadPasswordLable">
          <property name="font">
           <font>
@@ -340,15 +331,23 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QLineEdit" name="LoadPasswordInput">
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="LoadIdInput">
          <property name="font">
           <font>
+           <family>微软雅黑</family>
            <pointsize>36</pointsize>
           </font>
          </property>
-         <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLineEdit" name="LoadPasswordInput">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>36</pointsize>
+          </font>
          </property>
         </widget>
        </item>
@@ -807,38 +806,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>LoadSure</sender>
-   <signal>clicked()</signal>
-   <receiver>LoadIdInput</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>890</x>
-     <y>516</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>941</x>
-     <y>232</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>LoadSure</sender>
-   <signal>clicked()</signal>
-   <receiver>LoadPasswordInput</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>890</x>
-     <y>516</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>941</x>
-     <y>321</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>RegisteredPushButton</sender>
    <signal>clicked()</signal>
    <receiver>ClientClass</receiver>
@@ -931,6 +898,38 @@
     <hint type="destinationlabel">
      <x>643</x>
      <y>732</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadSure</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadIdInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>941</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadSure</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadPasswordInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>941</x>
+     <y>322</y>
     </hint>
    </hints>
   </connection>
