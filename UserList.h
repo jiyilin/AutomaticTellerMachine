@@ -21,7 +21,7 @@ public:
 	void sort();
 	User* gain_center();
 	int size();
-	void split(UserList* &left, UserList* &right, User* &center);
+	void split(UserList* &left, UserList* &right);
 	bool empty();
 	bool eraser(std::string lock);
 };

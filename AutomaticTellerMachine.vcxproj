@@ -94,6 +94,7 @@
     <ClCompile Include="TransferHistory.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UserList.cpp" />
+    <ClCompile Include="UserTreeNode.cpp" />
     <QtRcc Include="AutomaticTellerMachine.qrc" />
     <QtUic Include="AdminSide.ui" />
     <QtUic Include="AutomaticTellerMachine.ui" />
@@ -110,6 +111,7 @@
     <ClInclude Include="TransferHistory.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UserList.h" />
+    <ClInclude Include="UserTreeNode.h" />
     <QtMoc Include="Client.h" />
     <QtMoc Include="AdminSide.h" />
     <ClInclude Include="Administrator.h" />

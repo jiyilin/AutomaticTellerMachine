@@ -107,9 +107,9 @@ int UserList::size()
 	return key;
 }
 
-void UserList::split(UserList* &left, UserList* &right, User* &center)
+void UserList::split(UserList* &left, UserList* &right)
 {
-	center = this->gain_center();
+	auto center = this->gain_center();
 	left = new UserList;
 	right = new UserList;
 	auto search = this->head;
