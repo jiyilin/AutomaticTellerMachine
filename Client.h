@@ -6,6 +6,8 @@
 #include <QMainWindow>
 
 #include "ui_Client.h"
+#include"User.h"
+#include"Machine.h"
 
 class Client : public QMainWindow
 {
@@ -21,6 +23,8 @@ private slots:
 
 private:
 	Ui::ClientClass ui;
+	Machine* ATM;
+	User* userNow;
 };
 
 #endif // !Client_H
