@@ -5,6 +5,8 @@
 
 Client::Client(QWidget *parent): QMainWindow(parent){
 	ui.setupUi(this);
+	this->ATM = nullptr;
+	this->userNow = nullptr;
 
 	ui.LoadWindow->hide();
 	ui.RegisteredWindow->hide();
