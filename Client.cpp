@@ -2,6 +2,7 @@
 #include<string>
 #include <fstream>
 #include<qmessagebox.h>
+#include"UserTreeNode.h"
 
 Client::Client(QWidget *parent): QMainWindow(parent){
 	ui.setupUi(this);
@@ -105,4 +106,31 @@ void Client::on_RegisteredPushButton_click()
 
 void Client::on_LoadSureButton_click()
 {
+	if (ui.LoadIdInput->text().length() == 0 || ui.LoadPasswordInput->text().length() == 0)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "账号密码不能为空", QMessageBox::Ok);
+		msgBox.exec();
+	}
+	else
+	{
+		if (UserLoad(ui.LoadIdInput->text().toStdString(),ui.LoadPasswordInput->text().toStdString(),this->userNow))
+		{
+			ui.RegisteredWindow->show();
+			ui.LoadDashBoadWindow->show();
+		}
+		else
+		{
+			if (this->userNow!=nullptr)
+			{
+				QMessageBox msgBox(QMessageBox::Question, "ERROR", "密码错误", QMessageBox::Ok);
+				msgBox.exec();
+				this->userNow = nullptr;
+			}
+			else
+			{
+				QMessageBox msgBox(QMessageBox::Question, "ERROR", "该用户不存在", QMessageBox::Ok);
+				msgBox.exec();
+			}
+		}
+	}
 }
