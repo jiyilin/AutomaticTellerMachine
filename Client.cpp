@@ -1,7 +1,11 @@
 ﻿#include "Client.h"
 #include<string>
 #include <fstream>
+#include<sstream>
 #include<qmessagebox.h>
+#include<qtimer.h>
+#include<qtimeline.h>
+#include<qtimezone.h>
 #include"UserTreeNode.h"
 
 Client::Client(QWidget *parent): QMainWindow(parent){
@@ -117,6 +121,28 @@ void Client::on_LoadSureButton_click()
 		{
 			ui.RegisteredWindow->show();
 			ui.LoadDashBoadWindow->show();
+
+			QString id = QString::fromStdString(userNow->Gain_User_Id());
+			ui.LoadDashBoardId->setText(id);
+
+			std::stringstream stream;
+			stream << userNow->Gain_USer_Amount();
+			std::string process;
+			stream >> process;
+			QString cash = QString::fromStdString(process);
+			ui.LoadDashBoardCash->setText(cash);
+
+			if (userNow->Gain_User_State()==true)
+			{
+				ui.LoadDashBoardState->setText("该用户已激活");
+			}
+			else
+			{
+				ui.LoadDashBoardState->setText("该用户未激活");
+			}
+
+			QDateTime time = QDateTime::currentDateTime();
+			ui.LoadDashBoardTime->setText(time.toString("yyyy-MM-dd hh:mm:ss"));
 		}
 		else
 		{
