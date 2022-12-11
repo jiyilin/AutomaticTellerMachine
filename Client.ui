@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1478</width>
-    <height>726</height>
+    <height>725</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -753,8 +753,8 @@
      <y>542</y>
     </hint>
     <hint type="destinationlabel">
-     <x>473</x>
-     <y>502</y>
+     <x>933</x>
+     <y>512</y>
     </hint>
    </hints>
   </connection>
@@ -769,8 +769,8 @@
      <y>217</y>
     </hint>
     <hint type="destinationlabel">
-     <x>340</x>
-     <y>228</y>
+     <x>800</x>
+     <y>238</y>
     </hint>
    </hints>
   </connection>
@@ -845,8 +845,8 @@
    <slot>on_RegisteredPushButton_click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>730</x>
-     <y>531</y>
+     <x>1190</x>
+     <y>541</y>
     </hint>
     <hint type="destinationlabel">
      <x>588</x>
@@ -861,12 +861,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>890</x>
-     <y>526</y>
+     <x>1350</x>
+     <y>536</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1023</x>
-     <y>198</y>
+     <x>1483</x>
+     <y>208</y>
     </hint>
    </hints>
   </connection>
@@ -877,12 +877,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>890</x>
-     <y>526</y>
+     <x>1350</x>
+     <y>536</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1023</x>
-     <y>273</y>
+     <x>1483</x>
+     <y>283</y>
     </hint>
    </hints>
   </connection>
@@ -893,12 +893,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>890</x>
-     <y>526</y>
+     <x>1350</x>
+     <y>536</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1023</x>
-     <y>348</y>
+     <x>1483</x>
+     <y>358</y>
     </hint>
    </hints>
   </connection>
@@ -909,17 +909,34 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>890</x>
-     <y>526</y>
+     <x>1350</x>
+     <y>536</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1023</x>
-     <y>423</y>
+     <x>1483</x>
+     <y>433</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadSure</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_LoadSureButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>727</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>643</x>
+     <y>732</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>on_RegisteredPushButton_click()</slot>
+  <slot>on_LoadSureButton_click()</slot>
  </slots>
 </ui>

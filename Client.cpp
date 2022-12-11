@@ -100,3 +100,7 @@ void Client::on_RegisteredPushButton_click()
 		}
 	}
 }
+
+void Client::on_LoadSureButton_click()
+{
+}
