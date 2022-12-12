@@ -17,5 +17,5 @@ UserTreeNode* SortedUserListToBST(UserList*& lock);
 bool SearchUserTreeNode(UserTreeNode*& lock, std::string eval, User*& key);
 UserList* GainUSerData();
 bool UserLoad(std::string id, std::string password, User* &key);
-bool SearchUserList(UserList* lock, std::string eval, User*& key);
+bool SearchUserTreeList(UserList* lock, std::string eval, User*& key);
 #endif // !UserTreeNode_H

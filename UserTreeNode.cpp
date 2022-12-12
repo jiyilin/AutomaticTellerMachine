@@ -71,6 +71,22 @@ bool SearchUserTreeNode(UserTreeNode*& lock, std::string eval, User*& key)
 	return true;
 }
 
+bool SearchUserTreeList(UserList* lock, std::string eval, User*& key)
+{
+	while (lock->next != nullptr)
+	{
+		lock = lock->next;
+		if (lock->data->Gain_User_Id() == eval)
+		{
+			key = lock->data;
+			return true;
+		}
+	}
+	key = nullptr;
+	return false;
+}
+
+
 UserList* GainUSerData()
 {
 	auto lock = UserList_InitUserList();
@@ -123,7 +139,7 @@ bool UserDataFlushed(std::string flag)
 bool UserLoad(std::string id, std::string password, User* &key)
 {
 	auto data = GainUSerData();
-	if (!SearchUserList(data,id,key))
+	if (!SearchUserTreeList(data,id,key))
 	{
 		key = nullptr;
 		return false;
@@ -139,19 +155,4 @@ bool UserLoad(std::string id, std::string password, User* &key)
 			return false;
 		}
 	}
-}
-
-bool SearchUserList(UserList* lock, std::string eval, User*& key)
-{
-	while (lock->next!=nullptr)
-	{
-		lock = lock->next;
-		if (lock->data->Gain_User_Id() == eval)
-		{
-			key = lock->data;
-			return true;
-		}
-	}
-	key = nullptr;
-	return false;
 }
