@@ -826,8 +826,8 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="DepositInput">
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="DepositBalance">
              <property name="font">
               <font>
                <family>微软雅黑</family>
@@ -836,8 +836,8 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="DepositBalance">
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="DepositInput">
              <property name="font">
               <font>
                <family>微软雅黑</family>
@@ -1391,22 +1391,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>DepositButton</sender>
-   <signal>clicked()</signal>
-   <receiver>DepositInput</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>885</x>
-     <y>442</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1013</x>
-     <y>282</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>UserWithdrawal</sender>
    <signal>clicked()</signal>
    <receiver>ClientClass</receiver>
@@ -1451,6 +1435,22 @@
     <hint type="destinationlabel">
      <x>150</x>
      <y>397</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DepositButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DepositInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>442</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1013</x>
+     <y>282</y>
     </hint>
    </hints>
   </connection>

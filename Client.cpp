@@ -240,7 +240,8 @@ void Client::on_DepositButton_click()
 	}
 	else
 	{
-		std::stringstream stream(ui.WithdrawalInput->text().toStdString());
+		std::string process = ui.DepositInput->text().toStdString();
+		std::stringstream stream(process);
 		double input;
 		stream >> input;
 		if (this->ATM->Pop_CapitalPools(input))
