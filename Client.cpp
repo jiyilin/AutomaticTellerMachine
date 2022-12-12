@@ -10,13 +10,14 @@
 
 Client::Client(QWidget *parent): QMainWindow(parent){
 	ui.setupUi(this);
-	this->ATM = nullptr;
+	this->ATM = ATMPort();
 	this->userNow = nullptr;
 
 	ui.LoadWindow->hide();
 	ui.RegisteredWindow->hide();
 	ui.Menu->hide();
 	ui.LoadDashBoadWindow->hide();
+	ui.WithdrawalWindow->hide();
 }
 
 Client::~Client() = default;
@@ -182,4 +183,40 @@ void Client::on_UserExitButton_click()
 			userNow->Gain_User_Password() << " " << process << " " << "false" << std::endl;
 	}
 	write.close();
+}
+
+void Client::on_WithdrawalPushButton_click()
+{
+	if (userNow->Gain_User_State()==false)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "存款失败，该用户已被冻结", QMessageBox::Ok);
+		msgBox.exec();
+	}
+	else
+	{
+		std::stringstream stream(ui.WithdrawalInput->text().toStdString());
+		double input;
+		stream >> input;
+		if (this->ATM->Push_CapitalPools(input))
+		{
+			userNow->SetUserMoney(input, true);
+			on_UserDeposit_click();
+		}
+		else
+		{
+			QMessageBox msgBox(QMessageBox::Question, "ERROR", "存款失败，资金池已满", QMessageBox::Ok);
+			msgBox.exec();
+		}
+	}
+}
+
+void Client::on_UserDeposit_click()
+{
+	std::stringstream stream;
+	stream << userNow->Gain_USer_Amount();
+	std::string key;
+	stream >> key;
+	QString out = QString::fromStdString(key);
+	ui.WithdrawalBalance->setText(out);
+	ui.WithdrawalBalance->update();
 }

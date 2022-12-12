@@ -539,95 +539,8 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>36</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>余额：</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>36</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>状态：</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_8">
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>36</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>时间：</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="1">
           <widget class="QLabel" name="LoadDashBoardId">
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>36</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLabel" name="LoadDashBoardCash">
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>36</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLabel" name="LoadDashBoardState">
-           <property name="font">
-            <font>
-             <family>微软雅黑</family>
-             <pointsize>36</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLabel" name="LoadDashBoardTime">
            <property name="font">
             <font>
              <family>微软雅黑</family>
@@ -655,6 +568,35 @@
            </property>
           </spacer>
          </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>余额：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="LoadDashBoardCash">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
          <item row="3" column="1">
           <spacer name="verticalSpacer_2">
            <property name="orientation">
@@ -667,6 +609,35 @@
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="LoadDashBoardState">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
          </item>
          <item row="5" column="1">
           <spacer name="verticalSpacer_3">
@@ -681,7 +652,129 @@
            </property>
           </spacer>
          </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>时间：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLabel" name="LoadDashBoardTime">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
         </layout>
+       </widget>
+       <widget class="QFrame" name="WithdrawalWindow">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1191</width>
+          <height>691</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QPushButton" name="WithdrawalPushButton">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>400</y>
+           <width>181</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>确定</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="formLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>170</y>
+           <width>681</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <layout class="QFormLayout" name="Withdrawal">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>36</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>余额：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>36</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>存款金额：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="WithdrawalInput">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>36</pointsize>
+             </font>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="WithdrawalBalance">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>36</pointsize>
+             </font>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </widget>
      </widget>
@@ -1012,10 +1105,140 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>UserDeposit</sender>
+   <signal>clicked()</signal>
+   <receiver>WithdrawalWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>885</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserExit</sender>
+   <signal>clicked()</signal>
+   <receiver>WithdrawalWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>667</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>885</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>WithdrawalPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_WithdrawalPushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>813</x>
+     <y>464</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>736</x>
+     <y>752</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserDeposit</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_UserDeposit_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>192</x>
+     <y>134</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>342</x>
+     <y>750</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>WithdrawalPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WithdrawalInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>447</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1003</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>WithdrawalPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_UserDeposit_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>447</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>738</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserExit</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadDashBoadWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>667</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserExit</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>667</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_RegisteredPushButton_click()</slot>
   <slot>on_LoadSureButton_click()</slot>
   <slot>on_UserExitButton_click()</slot>
+  <slot>on_WithdrawalPushButton_click()</slot>
+  <slot>on_UserDeposit_click()</slot>
  </slots>
 </ui>

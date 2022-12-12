@@ -24,6 +24,10 @@ private slots:
 	void on_LoadSureButton_click();
 
 	void on_UserExitButton_click();
+
+	void on_WithdrawalPushButton_click();
+
+	void on_UserDeposit_click();
 private:
 	Ui::ClientClass ui;
 	Machine* ATM;
