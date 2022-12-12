@@ -290,3 +290,23 @@ void Client::on_ChangePasswordPushButton_click()
 		msgBox.exec();
 	}
 }
+
+void Client::on_FreezePushButton_click()
+{
+	std::string inputIdCard = ui.FreezeIdcardInput->text().toStdString();
+	if (inputIdCard == userNow->Gain_User_IdentityCard())
+	{
+		QMessageBox msgBox(QMessageBox::Warning, "Warning", "确定冻结吗？", QMessageBox::Ok | QMessageBox::Cancel);
+		if (msgBox.exec() == QMessageBox::Ok)
+		{
+			userNow->SetUserCanUse(false);
+			QMessageBox msgBoxSure(QMessageBox::Warning, "SUCCESS", "已冻结成功", QMessageBox::Ok);
+			msgBoxSure.exec();
+		}
+	}
+	else
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "冻结失败，银行卡输入错误", QMessageBox::Ok);
+		msgBox.exec();
+	}
+}
