@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1491</width>
-    <height>724</height>
+    <height>726</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -796,7 +796,7 @@
             <x>260</x>
             <y>160</y>
             <width>681</width>
-            <height>151</height>
+            <height>162</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="DepositWindow_2">
@@ -813,6 +813,16 @@
              </property>
             </widget>
            </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="DepositBalance">
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>36</pointsize>
+              </font>
+             </property>
+            </widget>
+           </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label_9">
              <property name="font">
@@ -823,16 +833,6 @@
              </property>
              <property name="text">
               <string>取款金额：</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="DepositBalance">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>36</pointsize>
-              </font>
              </property>
             </widget>
            </item>
@@ -866,6 +866,154 @@
           <property name="text">
            <string>确定</string>
           </property>
+         </widget>
+         <widget class="QFrame" name="ChagnePasswordWindow">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1211</width>
+            <height>691</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget_4">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>80</y>
+             <width>761</width>
+             <height>296</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_11">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>账号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>原密码</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_10">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>新密码</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_12">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>确认密码</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="ChangePasswordIDInput">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="ChangePasswordOldInput">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="ChangePasswordNewInput">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="ChangePasswordCheckInput">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QPushButton" name="ChangePasswordPushButton">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>450</y>
+             <width>211</width>
+             <height>71</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>确认</string>
+           </property>
+          </widget>
          </widget>
         </widget>
        </widget>
@@ -1451,6 +1599,182 @@
     <hint type="destinationlabel">
      <x>1013</x>
      <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>ChagnePasswordWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChangePasswordIDInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>979</x>
+     <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChangePasswordOldInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>979</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChangePasswordNewInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>979</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChangePasswordCheckInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>979</x>
+     <y>352</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerTransfer</sender>
+   <signal>clicked()</signal>
+   <receiver>ChagnePasswordWindow</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserWithdrawal</sender>
+   <signal>clicked()</signal>
+   <receiver>ChagnePasswordWindow</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>DepositWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>875</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>WithdrawalWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>885</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadDashBoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
     </hint>
    </hints>
   </connection>
