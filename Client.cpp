@@ -165,6 +165,10 @@ void Client::on_LoadSureButton_click()
 
 void Client::on_UserExitButton_click()
 {
+	if (userNow == nullptr)
+	{
+		return;
+	}
 	std::stringstream stream;
 	stream << userNow->Gain_USer_Amount();
 	std::string process;
@@ -283,6 +287,12 @@ void Client::on_ChangePasswordPushButton_click()
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，两次密码输入错误", QMessageBox::Ok);
 		msgBox.exec();
 	}
+	else if (userNow->Gain_User_State() == false)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "注销失败，该用户已被东给", QMessageBox::Ok);
+		msgBox.exec();
+		return;
+	}
 	else
 	{
 		userNow->SetUserPassword(newPassword);
@@ -307,6 +317,36 @@ void Client::on_FreezePushButton_click()
 	else
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "冻结失败，银行卡输入错误", QMessageBox::Ok);
+		msgBox.exec();
+	}
+}
+
+void Client::on_userLogoutPushButton_click()
+{
+	std::string id = ui.userLogoutIdInput->text().toStdString();
+	std::string password = ui.userLogoutPasswordInput->text().toStdString();
+	if (id == userNow->Gain_User_Id() && password == userNow->Gain_User_Password())
+	{
+		if (userNow->Gain_User_State() == false)
+		{
+			QMessageBox msgBox(QMessageBox::Question, "ERROR", "注销失败，该用户已被东给", QMessageBox::Ok);
+			msgBox.exec();
+			return;
+		}
+		QMessageBox msgBox(QMessageBox::Warning, "Warning", "确定注销吗？", QMessageBox::Ok | QMessageBox::Cancel);
+		if (msgBox.exec() == QMessageBox::Ok)
+		{
+			userNow = nullptr;
+			QMessageBox msgBoxNew(QMessageBox::Warning, "SUCCESS", "注销成功", QMessageBox::Ok);
+			msgBoxNew.exec();
+			this->on_UserExitButton_click();
+			this->close();
+			ui.Menu->close();
+		}
+	}
+	else
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "注销失败，账号或密码错误", QMessageBox::Ok);
 		msgBox.exec();
 	}
 }

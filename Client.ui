@@ -1083,6 +1083,102 @@
              </item>
             </layout>
            </widget>
+           <widget class="QFrame" name="UserLogoutWindow">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>1201</width>
+              <height>691</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QPushButton" name="userLogoutPushButton">
+             <property name="geometry">
+              <rect>
+               <x>490</x>
+               <y>400</y>
+               <width>211</width>
+               <height>81</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>36</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>确定</string>
+             </property>
+            </widget>
+            <widget class="QWidget" name="formLayoutWidget_5">
+             <property name="geometry">
+              <rect>
+               <x>240</x>
+               <y>170</y>
+               <width>721</width>
+               <height>146</height>
+              </rect>
+             </property>
+             <layout class="QFormLayout" name="formLayout_2">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_14">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>36</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>账号</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_15">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>36</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>密码</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="userLogoutIdInput">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>36</pointsize>
+                 </font>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="userLogoutPasswordInput">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>36</pointsize>
+                 </font>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
           </widget>
          </widget>
         </widget>
@@ -2072,6 +2168,262 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogoutWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>FreezeWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>ChagnePasswordWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>WithdrawalWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>885</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>DepositWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>875</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadDashBoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserFreeze</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogoutWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>515</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserChangePassword</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogoutWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>439</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserWithdrawal</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogoutWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserDeposit</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogoutWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserExit</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogoutWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>667</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>userLogoutPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_userLogoutPushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>853</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1131</x>
+     <y>736</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>userLogoutPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>userLogoutIdInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>452</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>941</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>userLogoutPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>userLogoutPasswordInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>452</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>941</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_RegisteredPushButton_click()</slot>
@@ -2083,5 +2435,6 @@
   <slot>on_DepositButton_click()</slot>
   <slot>on_ChangePasswordPushButton_click()</slot>
   <slot>on_FreezePushButton_click()</slot>
+  <slot>on_userLogoutPushButton_click()</slot>
  </slots>
 </ui>
