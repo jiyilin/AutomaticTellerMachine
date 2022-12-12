@@ -256,3 +256,37 @@ void Client::on_DepositButton_click()
 		}
 	}
 }
+
+void Client::on_ChangePasswordPushButton_click()
+{
+	std::string id = ui.ChangePasswordIdInput->text().toStdString();
+	std::string oldPassword = ui.ChangePasswordOldPasswordInput->text().toStdString();
+	std::string newPassword = ui.ChangePasswordNewPasswordInput->text().toStdString();
+	std::string checkPassowrd = ui.ChangePasswordCheckPasswordInput->text().toStdString();
+	if (id != userNow->Gain_User_Id())
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，账号输入错误", QMessageBox::Ok);
+		msgBox.exec();
+	}
+	else if(oldPassword != userNow->Gain_User_Password())
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，原密码输入错误", QMessageBox::Ok);
+		msgBox.exec();
+	}
+	else if(newPassword.length() < 6 || newPassword.length()>12)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，密码应大于5位并小于12位", QMessageBox::Ok);
+		msgBox.exec();
+	}
+	else if(newPassword != checkPassowrd)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，两次密码输入错误", QMessageBox::Ok);
+		msgBox.exec();
+	}
+	else
+	{
+		userNow->SetUserPassword(newPassword);
+		QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", "修改成功", QMessageBox::Ok);
+		msgBox.exec();
+	}
+}

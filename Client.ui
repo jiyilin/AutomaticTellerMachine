@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1491</width>
-    <height>726</height>
+    <width>1486</width>
+    <height>727</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -945,7 +945,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="ChangePasswordIDInput">
+             <widget class="QLineEdit" name="ChangePasswordIdInput">
               <property name="font">
                <font>
                 <family>微软雅黑</family>
@@ -955,7 +955,7 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="ChangePasswordOldInput">
+             <widget class="QLineEdit" name="ChangePasswordOldPasswordInput">
               <property name="font">
                <font>
                 <family>微软雅黑</family>
@@ -968,7 +968,7 @@
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QLineEdit" name="ChangePasswordNewInput">
+             <widget class="QLineEdit" name="ChangePasswordNewPasswordInput">
               <property name="font">
                <font>
                 <family>微软雅黑</family>
@@ -981,7 +981,7 @@
              </widget>
             </item>
             <item row="3" column="1">
-             <widget class="QLineEdit" name="ChangePasswordCheckInput">
+             <widget class="QLineEdit" name="ChangePasswordCheckPasswordInput">
               <property name="font">
                <font>
                 <family>微软雅黑</family>
@@ -1566,7 +1566,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>843</x>
-     <y>763</y>
+     <y>723</y>
     </hint>
    </hints>
   </connection>
@@ -1603,82 +1603,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>UserHistory</sender>
+   <sender>UserChangePassword</sender>
    <signal>clicked()</signal>
    <receiver>ChagnePasswordWindow</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>145</x>
-     <y>363</y>
+     <y>439</y>
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
      <y>357</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>ChangePasswordPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ChangePasswordIDInput</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>885</x>
-     <y>497</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>979</x>
-     <y>127</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>ChangePasswordPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ChangePasswordOldInput</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>885</x>
-     <y>497</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>979</x>
-     <y>202</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>ChangePasswordPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ChangePasswordNewInput</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>885</x>
-     <y>497</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>979</x>
-     <y>277</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>ChangePasswordPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ChangePasswordCheckInput</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>885</x>
-     <y>497</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>979</x>
-     <y>352</y>
     </hint>
    </hints>
   </connection>
@@ -1715,14 +1651,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>UserHistory</sender>
+   <sender>UserChangePassword</sender>
    <signal>clicked()</signal>
    <receiver>DepositWindow</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>145</x>
-     <y>363</y>
+     <y>439</y>
     </hint>
     <hint type="destinationlabel">
      <x>875</x>
@@ -1731,14 +1667,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>UserHistory</sender>
+   <sender>UserChangePassword</sender>
    <signal>clicked()</signal>
    <receiver>WithdrawalWindow</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>145</x>
-     <y>363</y>
+     <y>439</y>
     </hint>
     <hint type="destinationlabel">
      <x>885</x>
@@ -1747,14 +1683,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>UserHistory</sender>
+   <sender>UserChangePassword</sender>
    <signal>clicked()</signal>
    <receiver>LoadDashBoadWindow</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>145</x>
-     <y>363</y>
+     <y>439</y>
     </hint>
     <hint type="destinationlabel">
      <x>890</x>
@@ -1763,18 +1699,98 @@
    </hints>
   </connection>
   <connection>
-   <sender>UserHistory</sender>
+   <sender>UserChangePassword</sender>
    <signal>clicked()</signal>
    <receiver>RegisteredWindow</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>145</x>
-     <y>363</y>
+     <y>439</y>
     </hint>
     <hint type="destinationlabel">
      <x>890</x>
      <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_ChangePasswordPushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>884</x>
+     <y>507</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1235</x>
+     <y>739</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChangePasswordIdInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>979</x>
+     <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChangePasswordNewPasswordInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>979</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChangePasswordOldPasswordInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>979</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePasswordPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChangePasswordCheckPasswordInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>885</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>979</x>
+     <y>352</y>
     </hint>
    </hints>
   </connection>
@@ -1787,5 +1803,6 @@
   <slot>on_UserDeposit_click()</slot>
   <slot>on_UserWithdrawalButton_click()</slot>
   <slot>on_DepositButton_click()</slot>
+  <slot>on_ChangePasswordPushButton_click()</slot>
  </slots>
 </ui>
