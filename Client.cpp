@@ -220,3 +220,38 @@ void Client::on_UserDeposit_click()
 	ui.WithdrawalBalance->setText(out);
 	ui.WithdrawalBalance->update();
 }
+
+void Client::on_UserWithdrawalButton_click()
+{
+	std::stringstream stream;
+	stream << userNow->Gain_USer_Amount();
+	std::string key;
+	stream >> key;
+	QString out = QString::fromStdString(key);
+	ui.DepositBalance->setText(out);
+}
+
+void Client::on_DepositButton_click()
+{
+	if (userNow->Gain_User_State() == false)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "取款失败，该用户已被冻结", QMessageBox::Ok);
+		msgBox.exec();
+	}
+	else
+	{
+		std::stringstream stream(ui.WithdrawalInput->text().toStdString());
+		double input;
+		stream >> input;
+		if (this->ATM->Pop_CapitalPools(input))
+		{
+			userNow->SetUserMoney(input, false);
+			on_UserWithdrawalButton_click();
+		}
+		else
+		{
+			QMessageBox msgBox(QMessageBox::Question, "ERROR", "取款失败，资金池已满", QMessageBox::Ok);
+			msgBox.exec();
+		}
+	}
+}

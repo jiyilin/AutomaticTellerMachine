@@ -20,6 +20,10 @@ UserTreeNode* SortedUserListToBST(UserList*& lock)
 	while (search->next !=nullptr)
 	{
 		search = search->next;
+		if (key==nullptr)
+		{
+			break;
+		}
 		if (search->data->Gain_User_Id() > key->data->Gain_User_Id())
 		{
 			auto process = new User(search->data->Gain_User_Id(), search->data->Gain_User_Password(),
@@ -67,7 +71,7 @@ bool SearchUserTreeNode(UserTreeNode*& lock, std::string eval, User*& key)
 	return true;
 }
 
-UserTreeNode* GainUSerData()
+UserList* GainUSerData()
 {
 	auto lock = UserList_InitUserList();
 	if (!UserList_Read_Txt(lock))
@@ -75,8 +79,8 @@ UserTreeNode* GainUSerData()
 		MessageBox(nullptr, L"用户数据异常，无法获取用户数据", L"ERROR", MB_OK);
 		return nullptr;
 	}
-	auto key = SortedUserListToBST(lock->next);
-	return key;
+	//auto key = SortedUserListToBST(lock);
+	return lock;
 }
 
 bool UserDataFlushed(std::string flag)
@@ -119,7 +123,7 @@ bool UserDataFlushed(std::string flag)
 bool UserLoad(std::string id, std::string password, User* &key)
 {
 	auto data = GainUSerData();
-	if (!SearchUserTreeNode(data,id,key))
+	if (!SearchUserList(data,id,key))
 	{
 		key = nullptr;
 		return false;
@@ -135,4 +139,19 @@ bool UserLoad(std::string id, std::string password, User* &key)
 			return false;
 		}
 	}
+}
+
+bool SearchUserList(UserList* lock, std::string eval, User*& key)
+{
+	while (lock->next!=nullptr)
+	{
+		lock = lock->next;
+		if (lock->data->Gain_User_Id() == eval)
+		{
+			key = lock->data;
+			return true;
+		}
+	}
+	key = nullptr;
+	return false;
 }

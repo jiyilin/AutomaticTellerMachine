@@ -15,6 +15,7 @@ using UserTreeNode = struct UserTreeNode
 
 UserTreeNode* SortedUserListToBST(UserList*& lock);
 bool SearchUserTreeNode(UserTreeNode*& lock, std::string eval, User*& key);
-UserTreeNode* GainUSerData();
+UserList* GainUSerData();
 bool UserLoad(std::string id, std::string password, User* &key);
+bool SearchUserList(UserList* lock, std::string eval, User*& key);
 #endif // !UserTreeNode_H
