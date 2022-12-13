@@ -503,6 +503,76 @@
             <string>确定</string>
            </property>
           </widget>
+          <widget class="QFrame" name="UserLogsOffWindow">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>1171</width>
+             <height>691</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QWidget" name="horizontalLayoutWidget_3">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>200</y>
+              <width>951</width>
+              <height>80</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>36</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>需要注销的账号：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="UserLogsOffIdInput">
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>36</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QPushButton" name="UserLogsOffSurePushButton">
+            <property name="geometry">
+             <rect>
+              <x>510</x>
+              <y>420</y>
+              <width>171</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>36</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>确定</string>
+            </property>
+           </widget>
+          </widget>
          </widget>
         </widget>
        </widget>
@@ -1652,6 +1722,262 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserFreezesWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserDataQueriesWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundFillingWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadDashboardWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserQueriesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserFreezesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolFillingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>508</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolEmptyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>586</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffSurePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AdminSideClass</receiver>
+   <slot>on_UserLogsOffSurePushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>884</x>
+     <y>472</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1054</x>
+     <y>747</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffSurePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffIdInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>953</x>
+     <y>445</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1033</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_SignButton_click()</slot>
@@ -1660,5 +1986,6 @@
   <slot>on_UserQueriesPushButton_click()</slot>
   <slot>on_UserFreezesSuerPushButton_click()</slot>
   <slot>on_UserUnFreezePushButton_click()</slot>
+  <slot>on_UserLogsOffSurePushButton_click()</slot>
  </slots>
 </ui>
