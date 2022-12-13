@@ -1,6 +1,7 @@
 ﻿#include <string>
 #include <iostream>
 #include <sstream>
+#include<fstream>
 #include<qstring.h>
 #include<qtimer.h>
 #include<qtimeline.h>
@@ -85,6 +86,23 @@ void AdminSide::on_PoolEmptyButton_click()
 		ATM->EmptyThePool();
 		QMessageBox msgBox1(QMessageBox::Warning, "SUCCESS", "已完成资金库清空", QMessageBox::Ok, this);
 		msgBox1.exec();
+	}
+}
+
+void AdminSide::on_UserQueriesPushButton_click()
+{
+	std::ifstream read;
+	read.open("./data/UsersData.txt", std::ios_base::in);
+	if (read.is_open() == false)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "数据库异常，无法打开用户表并读取", QMessageBox::Ok);
+		msgBox.exec();
+		return;
+	}
+	std::string input;
+	while (std::getline(read,input))
+	{
+		ui.UserDataQueriesList->addItem(input.c_str());
 	}
 }
 

@@ -25,6 +25,7 @@ private slots:
 
 	void on_PoolEmptyButton_click();
 
+	void on_UserQueriesPushButton_click();
 private:
 	Ui::AdminSideClass ui;
 	Administrator administrator;

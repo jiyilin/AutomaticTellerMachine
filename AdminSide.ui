@@ -333,9 +333,9 @@
         <widget class="QListWidget" name="UserDataQueriesList">
          <property name="geometry">
           <rect>
-           <x>80</x>
+           <x>340</x>
            <y>170</y>
-           <width>991</width>
+           <width>471</width>
            <height>361</height>
           </rect>
          </property>
@@ -1016,10 +1016,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>UserQueriesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AdminSideClass</receiver>
+   <slot>on_UserQueriesPushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>206</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>79</x>
+     <y>757</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_SignButton_click()</slot>
   <slot>on_FundFillingButton_click()</slot>
   <slot>on_PoolEmptyButton_click()</slot>
+  <slot>on_UserQueriesPushButton_click()</slot>
  </slots>
 </ui>
