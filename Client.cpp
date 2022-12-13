@@ -350,3 +350,65 @@ void Client::on_userLogoutPushButton_click()
 		msgBox.exec();
 	}
 }
+
+void Client::on_UserTransferSurePushButton_click()
+{
+	if (userNow->Gain_User_State() == false)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "转账失败，该用户已被冻结", QMessageBox::Ok);
+		msgBox.exec();
+	}
+	std::string ToId = ui.USerTransferToId->text().toStdString();
+	std::string password = ui.USerTransferPassword->text().toStdString();
+	double cash = ui.USerTransferCash->text().toDouble();
+	auto data = GainUSerData();
+	auto search = data;
+	while (search->next!=nullptr)
+	{
+		search = search->next;
+		if (ToId == search->data->Gain_User_Id())
+		{
+			if (userNow->SetUserMoney(cash, false))
+			{
+				search->data->SetUserMoney(cash, true);
+				std::stringstream stream;
+				stream << this->userNow->Gain_USer_Amount();
+				std::string process;
+				stream >> process;
+				QString output = QString::fromStdString(process);
+				output = "转账成功，现有资金为" + output;
+				QMessageBox msgBox(QMessageBox::Warning, "SUCCESS",output , QMessageBox::Ok);
+				msgBox.exec();
+				std::ofstream write;
+				write.open("./data/UsersData.txt", std::ios_base::out);
+				search = data;
+				while (search->next != nullptr)
+				{
+					search = search->next;
+					if (search->data->Gain_User_State() == true)
+					{
+						write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
+							search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+					}
+					else
+					{
+						write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
+							search->data->Gain_USer_Amount() << " " << "false" << std::endl;
+					}
+				}
+				write.close();
+				return;
+			}
+			else
+			{
+				QMessageBox msgBox(QMessageBox::Question, "ERROR", "转账失败，资金输入错误", QMessageBox::Ok);
+				msgBox.exec();
+			}
+		}
+		else
+		{
+			QMessageBox msgBox(QMessageBox::Question, "ERROR", "转账失败，查无此用户", QMessageBox::Ok);
+			msgBox.exec();
+		}
+	}
+}

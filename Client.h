@@ -38,6 +38,8 @@ private slots:
 	void on_FreezePushButton_click();
 
 	void on_userLogoutPushButton_click();
+
+	void on_UserTransferSurePushButton_click();
 private:
 	Ui::ClientClass ui;
 	Machine* ATM;
