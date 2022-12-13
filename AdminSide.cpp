@@ -8,6 +8,7 @@
 #include<qtimezone.h>
 
 #include "AdminSide.h"
+#include "UserTreeNode.h"
 
 AdminSide::AdminSide(QWidget *parent): QMainWindow(parent)
 {
@@ -91,6 +92,7 @@ void AdminSide::on_PoolEmptyButton_click()
 
 void AdminSide::on_UserQueriesPushButton_click()
 {
+	ui.UserDataQueriesList->clear();
 	std::ifstream read;
 	read.open("./data/UsersData.txt", std::ios_base::in);
 	if (read.is_open() == false)
@@ -104,5 +106,43 @@ void AdminSide::on_UserQueriesPushButton_click()
 	{
 		ui.UserDataQueriesList->addItem(input.c_str());
 	}
+}
+
+void AdminSide::on_UserFreezesSuerPushButton_click()
+{
+	auto data = GainUSerData();
+	std::string lock = ui.UserFreezesIdInput->text().toStdString();
+	auto search = data;
+	while (search->next!=nullptr)
+	{
+		search = search->next;
+		if (search->data->Gain_User_Id() == lock)
+		{
+			search->data->SetUserCanUse(false);
+			QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", "冻结成功", QMessageBox::Ok);
+			msgBox.exec();
+			std::ofstream write;
+			write.open("./data/UsersData.txt", std::ios_base::out);
+			search = data;
+			while (search->next != nullptr)
+			{
+				search = search->next;
+				if (search->data->Gain_User_State() == true)
+				{
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() <<
+						search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+				}
+				else
+				{
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() <<
+						search->data->Gain_USer_Amount() << " " << "false" << std::endl;
+				}
+			}
+			write.close();
+			return;
+		}
+	}
+	QMessageBox msgBox(QMessageBox::Question, "ERROR", "冻结失败，查无此用户", QMessageBox::Ok);
+	msgBox.exec();
 }
 
