@@ -129,12 +129,50 @@ void AdminSide::on_UserFreezesSuerPushButton_click()
 				search = search->next;
 				if (search->data->Gain_User_State() == true)
 				{
-					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() <<
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
 						search->data->Gain_USer_Amount() << " " << "true" << std::endl;
 				}
 				else
 				{
-					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() <<
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
+						search->data->Gain_USer_Amount() << " " << "false" << std::endl;
+				}
+			}
+			write.close();
+			return;
+		}
+	}
+	QMessageBox msgBox(QMessageBox::Question, "ERROR", "冻结失败，查无此用户", QMessageBox::Ok);
+	msgBox.exec();
+}
+
+void AdminSide::on_UserUnFreezePushButton_click()
+{
+	auto data = GainUSerData();
+	std::string lock = ui.UserUnFreezesIdInput->text().toStdString();
+	auto search = data;
+	while (search->next != nullptr)
+	{
+		search = search->next;
+		if (search->data->Gain_User_Id() == lock)
+		{
+			search->data->SetUserCanUse(true);
+			QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", "解冻成功", QMessageBox::Ok);
+			msgBox.exec();
+			std::ofstream write;
+			write.open("./data/UsersData.txt", std::ios_base::out);
+			search = data;
+			while (search->next != nullptr)
+			{
+				search = search->next;
+				if (search->data->Gain_User_State() == true)
+				{
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
+						search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+				}
+				else
+				{
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
 						search->data->Gain_USer_Amount() << " " << "false" << std::endl;
 				}
 			}

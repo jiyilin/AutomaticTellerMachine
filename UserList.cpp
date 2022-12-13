@@ -136,6 +136,20 @@ void UserList_sort(UserList*& lock)
 	}
 }
 
+std::string UserList_Gain_END_ID(UserList* data)
+{
+	if (UserList_Empty(data))
+	{
+		return "0000";
+	}
+	auto search = data;
+	while (search->next!=nullptr)
+	{
+		search = search->next;
+	}
+	return search->data->Gain_User_Id();
+}
+
 bool UserList_Read_Txt(UserList*& lock)
 {
 	std::ifstream read;
@@ -155,6 +169,10 @@ bool UserList_Read_Txt(UserList*& lock)
 	bool canUse;
 	while (true)
 	{
+		if (read.eof())
+		{
+			break;
+		}
 		read >> id >> idCard >> password >> process1 >> process2;
 		if (process2 == "true")
 		{
@@ -167,10 +185,9 @@ bool UserList_Read_Txt(UserList*& lock)
 		std::stringstream stream(process1);
 		stream >> cash;
 		User process(id, password, idCard, cash, canUse);
-		UserList_push_back(lock, process);
-		if (read.eof())
+		if (process.Gain_User_Id()!=UserList_Gain_END_ID(lock))
 		{
-			break;
+			UserList_push_back(lock, process);
 		}
 	}
 	read.close();

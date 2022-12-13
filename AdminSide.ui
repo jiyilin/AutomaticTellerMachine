@@ -434,6 +434,76 @@
            </item>
           </layout>
          </widget>
+         <widget class="QFrame" name="USerUnfreezeWindow">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1161</width>
+            <height>691</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QWidget" name="horizontalLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>200</y>
+             <width>951</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>需要解冻的账号：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="UserUnFreezesIdInput">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>36</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QPushButton" name="USerUnfreezePushButton">
+           <property name="geometry">
+            <rect>
+             <x>510</x>
+             <y>400</y>
+             <width>171</width>
+             <height>71</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>36</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>确定</string>
+           </property>
+          </widget>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -1342,6 +1412,246 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserFreezesWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserDataQueriesWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundFillingWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadDashboardWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserQueriesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserFreezesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolFillingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>508</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolEmptyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>586</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AdminSideClass</receiver>
+   <slot>on_UserUnFreezePushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>932</x>
+     <y>444</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>840</x>
+     <y>746</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserUnFreezesIdInput</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>948</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>915</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_SignButton_click()</slot>
@@ -1349,5 +1659,6 @@
   <slot>on_PoolEmptyButton_click()</slot>
   <slot>on_UserQueriesPushButton_click()</slot>
   <slot>on_UserFreezesSuerPushButton_click()</slot>
+  <slot>on_UserUnFreezePushButton_click()</slot>
  </slots>
 </ui>

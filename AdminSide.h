@@ -29,6 +29,8 @@ private slots:
 
 	void on_UserFreezesSuerPushButton_click();
 
+	void on_UserUnFreezePushButton_click();
+
 private:
 	Ui::AdminSideClass ui;
 	Administrator administrator;
