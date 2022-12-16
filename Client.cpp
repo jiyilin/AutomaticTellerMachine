@@ -2,6 +2,7 @@
 #include<string>
 #include <fstream>
 #include<sstream>
+#include<Windows.h>
 #include<qmessagebox.h>
 #include<qtimer.h>
 #include<qtimeline.h>
@@ -195,6 +196,7 @@ void Client::on_WithdrawalPushButton_click()
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "存款失败，该用户已被冻结", QMessageBox::Ok);
 		msgBox.exec();
+		return;
 	}
 	else
 	{
@@ -207,7 +209,10 @@ void Client::on_WithdrawalPushButton_click()
 
 			std::string historyHead("存款");
 			auto History = GainHistoryString(historyHead, input, true);
-			WriteUserHistory(userNow->Gain_User_Id(), History);
+			std::ofstream write;
+			write.open("./data/" + this->userNow->Gain_User_Id() + ".txt", std::ios_base::app);
+			write << History << std::endl;
+			write.close();
 
 			on_UserDeposit_click();
 		}
@@ -246,6 +251,7 @@ void Client::on_DepositButton_click()
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "取款失败，该用户已被冻结", QMessageBox::Ok);
 		msgBox.exec();
+		return;
 	}
 	else
 	{
@@ -259,7 +265,10 @@ void Client::on_DepositButton_click()
 
 			std::string historyHead("取款");
 			auto History = GainHistoryString(historyHead, input, false);
-			WriteUserHistory(userNow->Gain_User_Id(), History);
+			std::ofstream write;
+			write.open("./data/" + this->userNow->Gain_User_Id() + ".txt", std::ios_base::app);
+			write << History << std::endl;
+			write.close();
 
 			on_UserWithdrawalButton_click();
 		}
@@ -367,6 +376,7 @@ void Client::on_UserTransferSurePushButton_click()
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "转账失败，该用户已被冻结", QMessageBox::Ok);
 		msgBox.exec();
+		return;
 	}
 	std::string ToId = ui.USerTransferToId->text().toStdString();
 	std::string password = ui.USerTransferPassword->text().toStdString();
@@ -410,11 +420,18 @@ void Client::on_UserTransferSurePushButton_click()
 
 				std::string historyHeadTo = "由" + userNow->Gain_User_Id() + "转账";
 				auto HistoryTo = GainHistoryString(historyHeadTo, cash, true);
-				WriteUserHistory(search->data->Gain_User_Id(), HistoryTo);
+
+				std::ofstream writeHistoryTo;
+				writeHistoryTo.open("./data/" + search->data->Gain_User_Id() + ".txt", std::ios_base::app);
+				writeHistoryTo << HistoryTo << std::endl;
+				writeHistoryTo.close();
 
 				std::string historyHeadFrom = "向" + search->data->Gain_User_Id() + "转账";
 				auto HistoryFrom = GainHistoryString(historyHeadFrom, cash, false);
-				WriteUserHistory(userNow->Gain_User_Id(), HistoryFrom);
+				std::ofstream writeHistoryFrom;
+				writeHistoryFrom.open("./data/" + userNow->Gain_User_Id() + ".txt", std::ios_base::app);
+				writeHistoryFrom << HistoryTo << std::endl;
+				writeHistoryFrom.close();
 
 				return;
 			}
@@ -423,13 +440,11 @@ void Client::on_UserTransferSurePushButton_click()
 				QMessageBox msgBox(QMessageBox::Question, "ERROR", "转账失败，资金输入错误", QMessageBox::Ok);
 				msgBox.exec();
 			}
-		}
-		else
-		{
-			QMessageBox msgBox(QMessageBox::Question, "ERROR", "转账失败，查无此用户", QMessageBox::Ok);
-			msgBox.exec();
+			return;
 		}
 	}
+	QMessageBox msgBox(QMessageBox::Question, "ERROR", "转账失败，查无此用户", QMessageBox::Ok);
+	msgBox.exec();
 }
 
 void Client::on_UserHistoryPushButton_click()
@@ -451,15 +466,6 @@ void Client::on_UserHistoryPushButton_click()
 	}
 }
 
-void WriteUserHistory(std::string name, std::string lock)
-{
-	std::string txt = "./data/" + name + ".txt";
-	std::ofstream write;
-	write.open(txt, std::ios_base::app);
-	write << lock << std::endl;
-	write.close();
-}
-
 std::string GainHistoryString(std::string head, double cash,bool isPlus)
 {
 	std::string time = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss").toStdString();
@@ -472,11 +478,11 @@ std::string GainHistoryString(std::string head, double cash,bool isPlus)
 	std::string key;
 	if (isPlus == true)
 	{
-		key = head + "    " + money + "    " + time;
+		key = head + "    +" + money + "    " + time;
 	}
 	else
 	{
-		key = head + "   " + money + "   " + time;
+		key = head + "    -" + money + "   " + time;
 	}
 
 	return key;
