@@ -2880,7 +2880,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
-     <y>357</y>
+     <y>939</y>
     </hint>
    </hints>
   </connection>
@@ -3040,7 +3040,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
-     <y>357</y>
+     <y>939</y>
     </hint>
    </hints>
   </connection>
@@ -3056,7 +3056,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
-     <y>357</y>
+     <y>939</y>
     </hint>
    </hints>
   </connection>
@@ -3072,7 +3072,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
-     <y>357</y>
+     <y>939</y>
     </hint>
    </hints>
   </connection>
@@ -3088,7 +3088,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
-     <y>357</y>
+     <y>939</y>
     </hint>
    </hints>
   </connection>
@@ -3104,7 +3104,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
-     <y>357</y>
+     <y>939</y>
     </hint>
    </hints>
   </connection>
@@ -3120,7 +3120,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
-     <y>357</y>
+     <y>939</y>
     </hint>
    </hints>
   </connection>
@@ -3136,7 +3136,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>895</x>
-     <y>357</y>
+     <y>939</y>
     </hint>
    </hints>
   </connection>
@@ -3153,6 +3153,54 @@
     <hint type="destinationlabel">
      <x>270</x>
      <y>803</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerTransferSurePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerTransferPassword</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>880</x>
+     <y>463</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>862</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerTransferSurePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerTransferCash</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>954</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>908</x>
+     <y>256</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerTransferSurePushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerTransferToId</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>959</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1102</x>
+     <y>178</y>
     </hint>
    </hints>
   </connection>

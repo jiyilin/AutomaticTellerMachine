@@ -48,6 +48,5 @@ private:
 	User* userNow;
 };
 
-void WriteUserHistory(std::string name,std::string lock);
 std::string GainHistoryString(std::string head, double cash, bool isPlus);
 #endif // !Client_H
