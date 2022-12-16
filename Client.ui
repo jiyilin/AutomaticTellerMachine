@@ -1296,6 +1296,54 @@
                </item>
               </layout>
              </widget>
+             <widget class="QFrame" name="UserHistoryWindow">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1211</width>
+                <height>691</height>
+               </rect>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="label_19">
+               <property name="geometry">
+                <rect>
+                 <x>460</x>
+                 <y>70</y>
+                 <width>311</width>
+                 <height>81</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>36</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>历史记录</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+              <widget class="QListWidget" name="UserHistoryList">
+               <property name="geometry">
+                <rect>
+                 <x>180</x>
+                 <y>200</y>
+                 <width>841</width>
+                 <height>361</height>
+                </rect>
+               </property>
+              </widget>
+             </widget>
             </widget>
            </widget>
           </widget>
@@ -2815,6 +2863,294 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>UserHistoryWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>USerTransferWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogoutWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>FreezeWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>ChagnePasswordWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>DepositWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>875</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>WithdrawalWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>885</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadDashBoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisteredWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>890</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserDeposit</sender>
+   <signal>clicked()</signal>
+   <receiver>UserHistoryWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserWithdrawal</sender>
+   <signal>clicked()</signal>
+   <receiver>UserHistoryWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerTransfer</sender>
+   <signal>clicked()</signal>
+   <receiver>UserHistoryWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserChangePassword</sender>
+   <signal>clicked()</signal>
+   <receiver>UserHistoryWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>439</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserFreeze</sender>
+   <signal>clicked()</signal>
+   <receiver>UserHistoryWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>515</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogout</sender>
+   <signal>clicked()</signal>
+   <receiver>UserHistoryWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>591</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserExit</sender>
+   <signal>clicked()</signal>
+   <receiver>UserHistoryWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>667</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserHistory</sender>
+   <signal>clicked()</signal>
+   <receiver>ClientClass</receiver>
+   <slot>on_UserHistoryPushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>374</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>803</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_RegisteredPushButton_click()</slot>
@@ -2828,5 +3164,6 @@
   <slot>on_FreezePushButton_click()</slot>
   <slot>on_userLogoutPushButton_click()</slot>
   <slot>on_UserTransferSurePushButton_click()</slot>
+  <slot>on_UserHistoryPushButton_click()</slot>
  </slots>
 </ui>

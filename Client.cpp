@@ -412,3 +412,22 @@ void Client::on_UserTransferSurePushButton_click()
 		}
 	}
 }
+
+void Client::on_UserHistoryPushButton_click()
+{
+	ui.UserHistoryList->clear();
+	std::string txt = "./data/" + userNow->Gain_User_Id() + ".txt";
+	std::ifstream read;
+	read.open(txt, std::ios_base::in);
+	if (read.is_open() == false)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "数据库异常，无法打开历史记录表并读取", QMessageBox::Ok);
+		msgBox.exec();
+		return;
+	}
+	std::string input;
+	while (std::getline(read, input))
+	{
+		ui.UserHistoryList->addItem(input.c_str());
+	}
+}

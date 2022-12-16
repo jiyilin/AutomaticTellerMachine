@@ -40,6 +40,8 @@ private slots:
 	void on_userLogoutPushButton_click();
 
 	void on_UserTransferSurePushButton_click();
+
+	void on_UserHistoryPushButton_click();
 private:
 	Ui::ClientClass ui;
 	Machine* ATM;
