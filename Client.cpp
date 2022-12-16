@@ -204,6 +204,11 @@ void Client::on_WithdrawalPushButton_click()
 		if (this->ATM->Push_CapitalPools(input))
 		{
 			userNow->SetUserMoney(input, true);
+
+			std::string historyHead("存款");
+			auto History = GainHistoryString(historyHead, input, true);
+			WriteUserHistory(userNow->Gain_User_Id(), History);
+
 			on_UserDeposit_click();
 		}
 		else
@@ -251,11 +256,16 @@ void Client::on_DepositButton_click()
 		if (this->ATM->Pop_CapitalPools(input))
 		{
 			userNow->SetUserMoney(input, false);
+
+			std::string historyHead("取款");
+			auto History = GainHistoryString(historyHead, input, false);
+			WriteUserHistory(userNow->Gain_User_Id(), History);
+
 			on_UserWithdrawalButton_click();
 		}
 		else
 		{
-			QMessageBox msgBox(QMessageBox::Question, "ERROR", "取款失败，资金池已满", QMessageBox::Ok);
+			QMessageBox msgBox(QMessageBox::Question, "ERROR", "取款失败，资金池已空", QMessageBox::Ok);
 			msgBox.exec();
 		}
 	}
@@ -397,6 +407,15 @@ void Client::on_UserTransferSurePushButton_click()
 					}
 				}
 				write.close();
+
+				std::string historyHeadTo = "由" + userNow->Gain_User_Id() + "转账";
+				auto HistoryTo = GainHistoryString(historyHeadTo, cash, true);
+				WriteUserHistory(search->data->Gain_User_Id(), HistoryTo);
+
+				std::string historyHeadFrom = "向" + search->data->Gain_User_Id() + "转账";
+				auto HistoryFrom = GainHistoryString(historyHeadFrom, cash, false);
+				WriteUserHistory(userNow->Gain_User_Id(), HistoryFrom);
+
 				return;
 			}
 			else
@@ -430,4 +449,35 @@ void Client::on_UserHistoryPushButton_click()
 	{
 		ui.UserHistoryList->addItem(input.c_str());
 	}
+}
+
+void WriteUserHistory(std::string name, std::string lock)
+{
+	std::string txt = "./data/" + name + ".txt";
+	std::ofstream write;
+	write.open(txt, std::ios_base::app);
+	write << lock << std::endl;
+	write.close();
+}
+
+std::string GainHistoryString(std::string head, double cash,bool isPlus)
+{
+	std::string time = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss").toStdString();
+
+	std::string money;
+	std::stringstream process;
+	process << cash;
+	process >> money;
+
+	std::string key;
+	if (isPlus == true)
+	{
+		key = head + "    " + money + "    " + time;
+	}
+	else
+	{
+		key = head + "   " + money + "   " + time;
+	}
+
+	return key;
 }
