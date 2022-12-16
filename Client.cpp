@@ -390,49 +390,56 @@ void Client::on_UserTransferSurePushButton_click()
 		{
 			if (userNow->SetUserMoney(cash, false))
 			{
-				search->data->SetUserMoney(cash, true);
-				std::stringstream stream;
-				stream << this->userNow->Gain_USer_Amount();
-				std::string process;
-				stream >> process;
-				QString output = QString::fromStdString(process);
-				output = "转账成功，现有资金为" + output;
-				QMessageBox msgBox(QMessageBox::Warning, "SUCCESS",output , QMessageBox::Ok);
-				msgBox.exec();
-				std::ofstream write;
-				write.open("./data/UsersData.txt", std::ios_base::out);
-				search = data;
-				while (search->next != nullptr)
+				if (userNow->Gain_User_Password() == password)
 				{
-					search = search->next;
-					if (search->data->Gain_User_State() == true)
+					search->data->SetUserMoney(cash, true);
+					std::stringstream stream;
+					stream << this->userNow->Gain_USer_Amount();
+					std::string process;
+					stream >> process;
+					QString output = QString::fromStdString(process);
+					output = "转账成功，现有资金为" + output;
+					QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", output, QMessageBox::Ok);
+					msgBox.exec();
+					std::ofstream write;
+					write.open("./data/UsersData.txt", std::ios_base::out);
+					search = data;
+					while (search->next != nullptr)
 					{
-						write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-							search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+						search = search->next;
+						if (search->data->Gain_User_State() == true)
+						{
+							write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
+								search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+						}
+						else
+						{
+							write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
+								search->data->Gain_USer_Amount() << " " << "false" << std::endl;
+						}
 					}
-					else
-					{
-						write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-							search->data->Gain_USer_Amount() << " " << "false" << std::endl;
-					}
+					write.close();
+
+					std::string historyHeadTo = "由" + userNow->Gain_User_Id() + "转账";
+					auto HistoryTo = GainHistoryString(historyHeadTo, cash, true);
+					std::ofstream writeHistoryTo;
+					writeHistoryTo.open("./data/" + search->data->Gain_User_Id() + ".txt", std::ios_base::app);
+					writeHistoryTo << HistoryTo << std::endl;
+					writeHistoryTo.close();
+
+					std::string historyHeadFrom = "向" + search->data->Gain_User_Id() + "转账";
+					auto HistoryFrom = GainHistoryString(historyHeadFrom, cash, false);
+					std::ofstream writeHistoryFrom;
+					writeHistoryFrom.open("./data/" + userNow->Gain_User_Id() + ".txt", std::ios_base::app);
+					writeHistoryFrom << HistoryFrom << std::endl;
+					writeHistoryFrom.close();
+
 				}
-				write.close();
-
-				std::string historyHeadTo = "由" + userNow->Gain_User_Id() + "转账";
-				auto HistoryTo = GainHistoryString(historyHeadTo, cash, true);
-
-				std::ofstream writeHistoryTo;
-				writeHistoryTo.open("./data/" + search->data->Gain_User_Id() + ".txt", std::ios_base::app);
-				writeHistoryTo << HistoryTo << std::endl;
-				writeHistoryTo.close();
-
-				std::string historyHeadFrom = "向" + search->data->Gain_User_Id() + "转账";
-				auto HistoryFrom = GainHistoryString(historyHeadFrom, cash, false);
-				std::ofstream writeHistoryFrom;
-				writeHistoryFrom.open("./data/" + userNow->Gain_User_Id() + ".txt", std::ios_base::app);
-				writeHistoryFrom << HistoryTo << std::endl;
-				writeHistoryFrom.close();
-
+				else
+				{
+					QMessageBox msgBox(QMessageBox::Question, "ERROR", "转账失败，密码输入错误", QMessageBox::Ok);
+					msgBox.exec();
+				}
 				return;
 			}
 			else
