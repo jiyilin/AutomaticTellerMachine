@@ -227,6 +227,8 @@ void AdminSide::on_UserLogsOffSurePushButton_click()
 void AdminSide::on_FundsTrackingPushButton_click()
 {
 	ui.FundsTrackingList->clear();
-
+	std::string FundsTrackingFrom = ui.FundsTrackingFrom->text().toStdString();
+	std::string FundsTrackingTo = ui.FundsTrackingTo->text().toStdString();
+	std::string FundsTrackingTime = ui.FundsTrackingTime->text().toStdString();
 }
 

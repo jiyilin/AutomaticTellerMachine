@@ -475,7 +475,7 @@ void Client::on_UserHistoryPushButton_click()
 
 std::string GainHistoryString(std::string head, double cash,bool isPlus)
 {
-	std::string time = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss").toStdString();
+	std::string time = QDateTime::currentDateTime().toString("yyyy-MM-dd-hh:mm:ss").toStdString();
 
 	std::string money;
 	std::stringstream process;
