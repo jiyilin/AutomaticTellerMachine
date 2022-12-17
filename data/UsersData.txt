@@ -1,3 +1,3 @@
 text2 654321 text2123 40 true
-text3 987654 text3123 0 true
 text1 123456 text1123 960 true
+text3 987654 text3123 0 true

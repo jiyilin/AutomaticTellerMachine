@@ -63,7 +63,7 @@ void AdminSide::on_FundFillingButton_click()
 	std::stringstream stream(input);
 	double key;
 	stream >> key;
-	if (!ATM->Push_CapitalPools(key))
+	if (!ATM->Push_CapitalPools(key) || key < 0)
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "资金输入错误，填充失败", QMessageBox::Ok, this);
 		msgBox.exec();

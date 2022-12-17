@@ -263,6 +263,12 @@ void Client::on_DepositButton_click()
 	}
 	else
 	{
+		if (userNow->Gain_USer_Amount() == 0)
+		{
+			QMessageBox msgBox(QMessageBox::Question, "ERROR", "取款失败，该用户余额为0", QMessageBox::Ok);
+			msgBox.exec();
+			return;
+		}
 		std::string process = ui.DepositInput->text().toStdString();
 		std::stringstream stream(process);
 		double input;
