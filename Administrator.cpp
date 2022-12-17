@@ -82,7 +82,7 @@ std::string ChangeHistoryString(std::string &lock)
 		{
 			flag++;
 		}
-		if (flag==2)
+		if (flag==2 && lock[start]!=' ')
 		{
 			name.push_back(lock[start]);
 		}
