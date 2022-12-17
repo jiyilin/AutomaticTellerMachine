@@ -106,6 +106,9 @@ void Client::on_RegisteredPushButton_click()
 			write.close();
 			QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", "注册成功", QMessageBox::Ok);
 			msgBox.exec();
+			std::ofstream write;
+			write.open("./data/" + id + ".txt", std::ios_base::out);
+			write.close();
 		}
 	}
 }
