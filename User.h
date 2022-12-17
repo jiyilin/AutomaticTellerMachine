@@ -4,6 +4,8 @@
 #define User_H
 
 #include "Human.h"
+#include<vector>
+#include<list>
 
 class User:private Human
 {

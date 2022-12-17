@@ -33,6 +33,8 @@ private slots:
 
 	void on_UserLogsOffSurePushButton_click();
 
+	void on_FundsTrackingPushButton_click();
+
 private:
 	Ui::AdminSideClass ui;
 	Administrator administrator;

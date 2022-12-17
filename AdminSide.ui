@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1439</width>
+    <width>1424</width>
     <height>729</height>
    </rect>
   </property>
@@ -571,6 +571,154 @@
             <property name="text">
              <string>确定</string>
             </property>
+           </widget>
+           <widget class="QFrame" name="FundsTrackingWindow">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>1161</width>
+              <height>691</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QListWidget" name="FundsTrackingList">
+             <property name="geometry">
+              <rect>
+               <x>240</x>
+               <y>320</y>
+               <width>711</width>
+               <height>361</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QWidget" name="formLayoutWidget_2">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>60</y>
+               <width>601</width>
+               <height>176</height>
+              </rect>
+             </property>
+             <layout class="QFormLayout" name="formLayout_2">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_8">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>转账发起人</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="FundsTrackingFrom">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_9">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>转账接收人</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="FundsTrackingTo">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_11">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>转账时间</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="FundsTrackingTime">
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>28</pointsize>
+                 </font>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QLabel" name="label_10">
+             <property name="geometry">
+              <rect>
+               <x>480</x>
+               <y>250</y>
+               <width>251</width>
+               <height>61</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>36</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>转账记录</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="FundsTrackingPushButton">
+             <property name="geometry">
+              <rect>
+               <x>710</x>
+               <y>100</y>
+               <width>221</width>
+               <height>101</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>36</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>跟踪</string>
+             </property>
+            </widget>
            </widget>
           </widget>
          </widget>
@@ -1462,7 +1610,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>1024</x>
-     <y>798</y>
+     <y>728</y>
     </hint>
    </hints>
   </connection>
@@ -1702,7 +1850,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>840</x>
-     <y>746</y>
+     <y>728</y>
     </hint>
    </hints>
   </connection>
@@ -1958,7 +2106,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>1054</x>
-     <y>747</y>
+     <y>728</y>
     </hint>
    </hints>
   </connection>
@@ -1978,6 +2126,694 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserLogsOffWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>USerUnfreezeWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserFreezesWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserDataQueriesWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>865</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundFillingWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadDashboardWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>LoadWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserQueriesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserFreezesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolFillingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>508</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolEmptyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>586</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>664</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>860</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingWindow</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>418</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>427</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserQueriesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingFrom</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>524</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserQueriesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>551</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserQueriesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>232</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>541</x>
+     <y>213</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserFreezesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingFrom</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>241</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserFreezesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>258</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>545</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserFreezesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>633</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingFrom</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>590</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>560</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>268</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingFrom</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>539</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>256</x>
+     <y>341</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UserLogsOffButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>581</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>USerUnfreezeButtton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>267</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>619</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingFrom</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>544</x>
+     <y>112</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>243</x>
+     <y>443</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>593</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>212</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>583</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolFillingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingFrom</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>540</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolFillingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>517</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>538</x>
+     <y>166</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolFillingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolEmptyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingFrom</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>243</x>
+     <y>586</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>512</x>
+     <y>114</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolEmptyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>581</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>565</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PoolEmptyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>573</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>570</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingFrom</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>663</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>568</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>658</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>733</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LoadExit</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingTime</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>652</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>654</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FundsTrackingList</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>442</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>693</x>
+     <y>494</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FundsTrackingPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AdminSideClass</receiver>
+   <slot>on_FundsTrackingPushButton_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1129</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1149</x>
+     <y>869</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_SignButton_click()</slot>
@@ -1987,5 +2823,6 @@
   <slot>on_UserFreezesSuerPushButton_click()</slot>
   <slot>on_UserUnFreezePushButton_click()</slot>
   <slot>on_UserLogsOffSurePushButton_click()</slot>
+  <slot>on_FundsTrackingPushButton_click()</slot>
  </slots>
 </ui>

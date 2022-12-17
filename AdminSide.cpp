@@ -224,3 +224,9 @@ void AdminSide::on_UserLogsOffSurePushButton_click()
 	msgBox.exec();
 }
 
+void AdminSide::on_FundsTrackingPushButton_click()
+{
+	QMessageBox msgBox(QMessageBox::Question, "success", "success", QMessageBox::Ok);
+	msgBox.exec();
+}
+
