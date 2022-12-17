@@ -16,7 +16,7 @@ public:
 	bool AdminstratorLoad(std::string& name, std::string& key);
 };
 
-void GainFundsTrackingAnswer(std::string FundsTrackingFrom,
+bool GainFundsTrackingAnswer(std::string FundsTrackingFrom,
 	std::string FundsTrackingTo, std::string FundsTrackingTime,
 	std::vector<std::list<std::string>> &key);
 #endif // !Administrator_H

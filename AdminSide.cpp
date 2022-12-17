@@ -231,7 +231,12 @@ void AdminSide::on_FundsTrackingPushButton_click()
 	std::string FundsTrackingTo = ui.FundsTrackingTo->text().toStdString();
 	std::string FundsTrackingTime = ui.FundsTrackingTime->text().toStdString();
 	std::vector<std::list<std::string>> key;
-	GainFundsTrackingAnswer(FundsTrackingFrom, FundsTrackingTo, FundsTrackingTime, key);
+	if (GainFundsTrackingAnswer(FundsTrackingFrom, FundsTrackingTo, FundsTrackingTime, key) == false)
+	{
+		QMessageBox msgBox(QMessageBox::Question, "ERROR", "追踪失败，数据库异常", QMessageBox::Ok);
+		msgBox.exec();
+		return;
+	}
 	auto VECTORSEARCH = key.begin();
 	while (VECTORSEARCH!=key.end())
 	{
