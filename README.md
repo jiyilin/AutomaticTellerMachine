@@ -4,6 +4,10 @@
 
 ![1671286009897](image/README/1671286009897.png)
 
+## 可执行文件
+
+exe文件位于 AutomaticTellerMachine\x64\Release\AutomaticTellerMachine.exe
+
 ## 代码阅读
 
 代码文件保存格式为: Unicode（UTF-8 带签名）-代码页65001
