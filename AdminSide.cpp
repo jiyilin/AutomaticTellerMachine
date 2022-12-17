@@ -226,7 +226,7 @@ void AdminSide::on_UserLogsOffSurePushButton_click()
 
 void AdminSide::on_FundsTrackingPushButton_click()
 {
-	QMessageBox msgBox(QMessageBox::Question, "success", "success", QMessageBox::Ok);
-	msgBox.exec();
+	ui.FundsTrackingList->clear();
+
 }
 
