@@ -1,4 +1,5 @@
 ﻿#include <fstream>
+#include<string.h>
 #include "Administrator.h"
 
 constexpr auto AdministratorID = "福州大学至诚学院";
@@ -20,7 +21,7 @@ bool Administrator::AdminstratorLoad(std::string &name, std::string &key)
 }
 
 bool GainFundsTrackingAnswer(std::string FundsTrackingFrom, std::string FundsTrackingTo,
-							 std::string FundsTrackingTime, std::vector<std::list<std::string>> &key)
+							 std::string FundsTrackingTime, std::list<std::list<std::string>> &key)
 {
 	std::ifstream readMain;
 	readMain.open("./data/" + FundsTrackingFrom + ".txt", std::ios_base::in);
@@ -29,6 +30,22 @@ bool GainFundsTrackingAnswer(std::string FundsTrackingFrom, std::string FundsTra
 		return false;
 	}
 	std::string remark;
-	std::string amount;
-	std::string time;
+	std::list<std::string> process;
+	while (std::getline(readMain,remark))
+	{
+		if (std::strstr(remark.c_str(), FundsTrackingTo.c_str()) !=nullptr &&
+			std::strstr(remark.c_str(), FundsTrackingTime.c_str())!=nullptr)
+		{
+			process.push_back(remark);
+			break;
+		}
+	}
+	if (process.empty()!=true)
+	{
+		key.push_back(process);
+	}
+
+
+
+	return true;
 }

@@ -230,7 +230,7 @@ void AdminSide::on_FundsTrackingPushButton_click()
 	std::string FundsTrackingFrom = ui.FundsTrackingFrom->text().toStdString();
 	std::string FundsTrackingTo = ui.FundsTrackingTo->text().toStdString();
 	std::string FundsTrackingTime = ui.FundsTrackingTime->text().toStdString();
-	std::vector<std::list<std::string>> key;
+	std::list<std::list<std::string>> key;
 	if (GainFundsTrackingAnswer(FundsTrackingFrom, FundsTrackingTo, FundsTrackingTime, key) == false)
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "追踪失败，数据库异常", QMessageBox::Ok);
