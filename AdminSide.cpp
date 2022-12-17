@@ -230,5 +230,19 @@ void AdminSide::on_FundsTrackingPushButton_click()
 	std::string FundsTrackingFrom = ui.FundsTrackingFrom->text().toStdString();
 	std::string FundsTrackingTo = ui.FundsTrackingTo->text().toStdString();
 	std::string FundsTrackingTime = ui.FundsTrackingTime->text().toStdString();
+	std::vector<std::list<std::string>> key;
+	GainFundsTrackingAnswer(FundsTrackingFrom, FundsTrackingTo, FundsTrackingTime, key);
+	auto VECTORSEARCH = key.begin();
+	while (VECTORSEARCH!=key.end())
+	{
+		auto LISTSEARCH = (*VECTORSEARCH).begin();
+		while (LISTSEARCH!=(*VECTORSEARCH).end())
+		{
+			QString process = QString::fromStdString(*LISTSEARCH);
+			ui.FundsTrackingList->addItem(process);
+			LISTSEARCH++;
+		}
+		VECTORSEARCH++;
+	}
 }
 

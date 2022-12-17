@@ -15,3 +15,9 @@ bool Administrator::AdminstratorLoad(std::string &name, std::string &key){
 	}
 	return true;
 }
+
+void GainFundsTrackingAnswer(std::string FundsTrackingFrom, std::string FundsTrackingTo,
+							std::string FundsTrackingTime, std::vector<std::list<std::string>>& key)
+{
+
+}
