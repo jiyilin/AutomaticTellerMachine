@@ -3,20 +3,19 @@
 #ifndef AdminSide_H
 #define AdminSide_H
 
-
 #include <QMainWindow>
-#include<qmessagebox.h>
+#include <qmessagebox.h>
 
 #include "ui_AdminSide.h"
-#include"Administrator.h"
-#include"Machine.h"
+#include "Administrator.h"
+#include "Machine.h"
 
 class AdminSide : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	AdminSide(QWidget* parent = nullptr);
+	AdminSide(QWidget *parent = nullptr);
 	~AdminSide();
 private slots:
 	void on_SignButton_click();
@@ -38,7 +37,7 @@ private slots:
 private:
 	Ui::AdminSideClass ui;
 	Administrator administrator;
-	Machine* ATM;
+	Machine *ATM;
 };
 
 #endif // !AdminSide_H

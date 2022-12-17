@@ -3,14 +3,14 @@
 #ifndef Human_H
 #define Human_H
 
-#include<string>
-
+#include <string>
 
 class Human
 {
 protected:
 	std::string id;
 	std::string password;
+
 public:
 	Human();
 };

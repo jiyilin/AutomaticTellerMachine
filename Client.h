@@ -6,15 +6,15 @@
 #include <QMainWindow>
 
 #include "ui_Client.h"
-#include"User.h"
-#include"Machine.h"
+#include "User.h"
+#include "Machine.h"
 
 class Client : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	Client(QWidget* parent = nullptr);
+	Client(QWidget *parent = nullptr);
 	~Client();
 
 private slots:
@@ -42,10 +42,11 @@ private slots:
 	void on_UserTransferSurePushButton_click();
 
 	void on_UserHistoryPushButton_click();
+
 private:
 	Ui::ClientClass ui;
-	Machine* ATM;
-	User* userNow;
+	Machine *ATM;
+	User *userNow;
 };
 
 std::string GainHistoryString(std::string head, double cash, bool isPlus);

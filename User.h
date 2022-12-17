@@ -4,19 +4,20 @@
 #define User_H
 
 #include "Human.h"
-#include<vector>
-#include<list>
+#include <vector>
+#include <list>
 
-class User:private Human
+class User : private Human
 {
 private:
 	std::string identityCard;
 	double amount;
 	bool state;
+
 public:
 	User();
 	User(std::string name, std::string key, std::string idCard, double number);
-	User(std::string name, std::string key, std::string idCard, double number,bool is);
+	User(std::string name, std::string key, std::string idCard, double number, bool is);
 
 	std::string Gain_User_Id();
 	std::string Gain_User_Password();

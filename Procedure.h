@@ -4,14 +4,13 @@
 #define Procedure_H
 
 #include <windows.h>
-#include"AutomaticTellerMachine.h"
+#include "AutomaticTellerMachine.h"
 
 class Procedure
 {
 private:
-
-	//Main window
-	AutomaticTellerMachine* mainWindow;
+	// Main window
+	AutomaticTellerMachine *mainWindow;
 
 	void SetMainWindowShow();
 	bool DatabaseDetection();

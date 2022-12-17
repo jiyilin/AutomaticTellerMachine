@@ -1,16 +1,16 @@
 ﻿#include <string>
 #include <iostream>
 #include <sstream>
-#include<fstream>
-#include<qstring.h>
-#include<qtimer.h>
-#include<qtimeline.h>
-#include<qtimezone.h>
+#include <fstream>
+#include <qstring.h>
+#include <qtimer.h>
+#include <qtimeline.h>
+#include <qtimezone.h>
 
 #include "AdminSide.h"
 #include "UserTreeNode.h"
 
-AdminSide::AdminSide(QWidget *parent): QMainWindow(parent)
+AdminSide::AdminSide(QWidget *parent) : QMainWindow(parent)
 {
 	ui.setupUi(this);
 	this->ATM = ATMPort();
@@ -25,7 +25,7 @@ AdminSide::~AdminSide() = default;
 
 void AdminSide::on_SignButton_click()
 {
-	if (ui.LoadIdInput->text().length()==0 || ui.LoadPasswordInput->text().length()==0)
+	if (ui.LoadIdInput->text().length() == 0 || ui.LoadPasswordInput->text().length() == 0)
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "账号与密码不能为空", QMessageBox::Ok, this);
 		msgBox.exec();
@@ -33,7 +33,7 @@ void AdminSide::on_SignButton_click()
 	}
 	std::string id = ui.LoadIdInput->text().toStdString();
 	std::string password = ui.LoadPasswordInput->text().toStdString();
-	if (!administrator.AdminstratorLoad(id,password))
+	if (!administrator.AdminstratorLoad(id, password))
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "账号或密码错误", QMessageBox::Ok, this);
 		msgBox.exec();
@@ -74,7 +74,7 @@ void AdminSide::on_FundFillingButton_click()
 		std::string process("资金填充成功,资金池现存：");
 		process = process + std::to_string(cash);
 		auto output = QString::fromStdString(process);
-		QMessageBox msgBox(QMessageBox::Warning, "SUCCESS",output , QMessageBox::Ok, this);
+		QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", output, QMessageBox::Ok, this);
 		msgBox.exec();
 	}
 }
@@ -102,7 +102,7 @@ void AdminSide::on_UserQueriesPushButton_click()
 		return;
 	}
 	std::string input;
-	while (std::getline(read,input))
+	while (std::getline(read, input))
 	{
 		ui.UserDataQueriesList->addItem(input.c_str());
 	}
@@ -113,7 +113,7 @@ void AdminSide::on_UserFreezesSuerPushButton_click()
 	auto data = GainUSerData();
 	std::string lock = ui.UserFreezesIdInput->text().toStdString();
 	auto search = data;
-	while (search->next!=nullptr)
+	while (search->next != nullptr)
 	{
 		search = search->next;
 		if (search->data->Gain_User_Id() == lock)
@@ -129,13 +129,13 @@ void AdminSide::on_UserFreezesSuerPushButton_click()
 				search = search->next;
 				if (search->data->Gain_User_State() == true)
 				{
-					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-						search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " << search->data->Gain_USer_Amount() << " "
+						  << "true" << std::endl;
 				}
 				else
 				{
-					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-						search->data->Gain_USer_Amount() << " " << "false" << std::endl;
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " << search->data->Gain_USer_Amount() << " "
+						  << "false" << std::endl;
 				}
 			}
 			write.close();
@@ -167,13 +167,13 @@ void AdminSide::on_UserUnFreezePushButton_click()
 				search = search->next;
 				if (search->data->Gain_User_State() == true)
 				{
-					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-						search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " << search->data->Gain_USer_Amount() << " "
+						  << "true" << std::endl;
 				}
 				else
 				{
-					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-						search->data->Gain_USer_Amount() << " " << "false" << std::endl;
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " << search->data->Gain_USer_Amount() << " "
+						  << "false" << std::endl;
 				}
 			}
 			write.close();
@@ -190,7 +190,7 @@ void AdminSide::on_UserLogsOffSurePushButton_click()
 	std::string lock = ui.UserLogsOffIdInput->text().toStdString();
 	auto search = data;
 	auto left = data;
-	while (search->next!=nullptr)
+	while (search->next != nullptr)
 	{
 		left = search;
 		search = search->next;
@@ -207,13 +207,13 @@ void AdminSide::on_UserLogsOffSurePushButton_click()
 				search = search->next;
 				if (search->data->Gain_User_State() == true)
 				{
-					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-						search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " << search->data->Gain_USer_Amount() << " "
+						  << "true" << std::endl;
 				}
 				else
 				{
-					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-						search->data->Gain_USer_Amount() << " " << "false" << std::endl;
+					write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " << search->data->Gain_USer_Amount() << " "
+						  << "false" << std::endl;
 				}
 			}
 			write.close();
@@ -238,10 +238,10 @@ void AdminSide::on_FundsTrackingPushButton_click()
 		return;
 	}
 	auto VECTORSEARCH = key.begin();
-	while (VECTORSEARCH!=key.end())
+	while (VECTORSEARCH != key.end())
 	{
 		auto LISTSEARCH = (*VECTORSEARCH).begin();
-		while (LISTSEARCH!=(*VECTORSEARCH).end())
+		while (LISTSEARCH != (*VECTORSEARCH).end())
 		{
 			QString process = QString::fromStdString(*LISTSEARCH);
 			ui.FundsTrackingList->addItem(process);
@@ -250,4 +250,3 @@ void AdminSide::on_FundsTrackingPushButton_click()
 		VECTORSEARCH++;
 	}
 }
-

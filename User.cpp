@@ -50,7 +50,7 @@ bool User::Gain_User_State()
 	return this->state;
 }
 
-bool User::SetUserPassword(std::string& key)
+bool User::SetUserPassword(std::string &key)
 {
 	if (key.length() < 5 || key.length() > 12 || key == this->password)
 	{

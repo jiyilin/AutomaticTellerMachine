@@ -1,18 +1,18 @@
 ﻿#include "UserList.h"
-#include<fstream>
-#include<Windows.h>
-#include<sstream>
+#include <fstream>
+#include <Windows.h>
+#include <sstream>
 
-void UserList_push_back(UserList* &lock, User eval)
+void UserList_push_back(UserList *&lock, User eval)
 {
 	auto end = lock;
-	while (end->next!=nullptr)
+	while (end->next != nullptr)
 	{
 		end = end->next;
 	}
 
 	auto nodeData = new User(eval.Gain_User_Id(), eval.Gain_User_Password(),
-		eval.Gain_User_IdentityCard(), eval.Gain_USer_Amount(), eval.Gain_User_State());
+							 eval.Gain_User_IdentityCard(), eval.Gain_USer_Amount(), eval.Gain_User_State());
 	auto node = new UserList;
 	node->data = nodeData;
 	node->next = nullptr;
@@ -20,10 +20,10 @@ void UserList_push_back(UserList* &lock, User eval)
 	end->next = node;
 }
 
-void UserList_push_front(UserList*& lock, User eval)
+void UserList_push_front(UserList *&lock, User eval)
 {
 	auto nodeData = new User(eval.Gain_User_Id(), eval.Gain_User_Password(),
-		eval.Gain_User_IdentityCard(), eval.Gain_USer_Amount(), eval.Gain_User_State());
+							 eval.Gain_User_IdentityCard(), eval.Gain_USer_Amount(), eval.Gain_User_State());
 	auto node = new UserList;
 	node->data = nodeData;
 	node->next = lock->next;
@@ -31,7 +31,7 @@ void UserList_push_front(UserList*& lock, User eval)
 	lock->next = node;
 }
 
-void UserList_pop_back(UserList*& lock)
+void UserList_pop_back(UserList *&lock)
 {
 	if (UserList_Empty(lock))
 	{
@@ -45,26 +45,26 @@ void UserList_pop_back(UserList*& lock)
 	end->next = nullptr;
 }
 
-void UserList_pop_front(UserList*& lock)
+void UserList_pop_front(UserList *&lock)
 {
 	lock = lock->next;
 	lock->data = nullptr;
 }
 
-bool UserList_Empty(UserList* lock)
+bool UserList_Empty(UserList *lock)
 {
-	if (lock->next ==nullptr)
+	if (lock->next == nullptr)
 	{
 		return true;
 	}
 	return false;
 }
 
-int UserList_Length(UserList* lock)
+int UserList_Length(UserList *lock)
 {
 	int key = 0;
 	auto search = lock;
-	while (search->next!=nullptr)
+	while (search->next != nullptr)
 	{
 		search = search->next;
 		key++;
@@ -72,11 +72,11 @@ int UserList_Length(UserList* lock)
 	return key;
 }
 
-User* UserList_gain_center(UserList* lock)
+User *UserList_gain_center(UserList *lock)
 {
-	int flag = UserList_Length(lock)/2;
+	int flag = UserList_Length(lock) / 2;
 	auto search = lock;
-	while (flag!=0)
+	while (flag != 0)
 	{
 		search = search->next;
 		flag--;
@@ -84,7 +84,7 @@ User* UserList_gain_center(UserList* lock)
 	return search->data;
 }
 
-//User* UserList_Split(UserList* lock, UserList*& left, UserList*& right)
+// User* UserList_Split(UserList* lock, UserList*& left, UserList*& right)
 //{
 //	UserList_sort(lock);
 //	auto flag = UserList_Length(lock);
@@ -104,26 +104,25 @@ User* UserList_gain_center(UserList* lock)
 //		}
 //	}
 //	return UserList_gain_center(lock);
-//}
+// }
 
-
-UserList* UserList_InitUserList()
+UserList *UserList_InitUserList()
 {
 	auto head = new UserList;
 	head->next = nullptr;
 	return head;
 }
 
-void UserList_sort(UserList*& lock)
+void UserList_sort(UserList *&lock)
 {
-	User* process;
+	User *process;
 	auto search = lock;
 	auto flag = search;
-	while (search->next!=nullptr)
+	while (search->next != nullptr)
 	{
 		search = search->next;
 		flag = search;
-		while (flag!=nullptr)
+		while (flag != nullptr)
 		{
 			flag = flag->next;
 			if (flag->data->Gain_User_Id() < search->data->Gain_User_Id())
@@ -136,25 +135,25 @@ void UserList_sort(UserList*& lock)
 	}
 }
 
-std::string UserList_Gain_END_ID(UserList* data)
+std::string UserList_Gain_END_ID(UserList *data)
 {
 	if (UserList_Empty(data))
 	{
 		return "0000";
 	}
 	auto search = data;
-	while (search->next!=nullptr)
+	while (search->next != nullptr)
 	{
 		search = search->next;
 	}
 	return search->data->Gain_User_Id();
 }
 
-bool UserList_Read_Txt(UserList*& lock)
+bool UserList_Read_Txt(UserList *&lock)
 {
 	std::ifstream read;
 	read.open("./data/UsersData.txt", std::ios_base::in);
-	if (read.is_open()==false)
+	if (read.is_open() == false)
 	{
 		MessageBox(nullptr, L"数据库异常，无法获取用户数据", L"ERROR", MB_OK);
 		return false;
@@ -185,7 +184,7 @@ bool UserList_Read_Txt(UserList*& lock)
 		std::stringstream stream(process1);
 		stream >> cash;
 		User process(id, password, idCard, cash, canUse);
-		if (process.Gain_User_Id()!=UserList_Gain_END_ID(lock))
+		if (process.Gain_User_Id() != UserList_Gain_END_ID(lock))
 		{
 			UserList_push_back(lock, process);
 		}

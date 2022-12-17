@@ -1,9 +1,8 @@
-﻿#include<sstream>
-#include<fstream>
-#include<string>
-#include<Windows.h>
+﻿#include <sstream>
+#include <fstream>
+#include <string>
+#include <Windows.h>
 #include "Machine.h"
-
 
 constexpr auto INIT_Capital_Pools = 100000.0;
 constexpr auto MAX_Capital_Pools = 1000000.0;
@@ -32,7 +31,7 @@ Machine::Machine()
 
 double Machine::Gain_CapitalPools()
 {
-	return this->capitalPools;
+    return this->capitalPools;
 }
 
 Machine::~Machine()
@@ -77,10 +76,10 @@ bool Machine::Pop_CapitalPools(double eval)
 
 void Machine::EmptyThePool()
 {
-	this->capitalPools = 0.0;
+    this->capitalPools = 0.0;
 }
 
-Machine* ATMPort()
+Machine *ATMPort()
 {
     return &atmMachine;
 }

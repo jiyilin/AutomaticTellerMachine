@@ -1,15 +1,16 @@
 ﻿#include "Client.h"
-#include<string>
+#include <string>
 #include <fstream>
-#include<sstream>
-#include<Windows.h>
-#include<qmessagebox.h>
-#include<qtimer.h>
-#include<qtimeline.h>
-#include<qtimezone.h>
-#include"UserTreeNode.h"
+#include <sstream>
+#include <Windows.h>
+#include <qmessagebox.h>
+#include <qtimer.h>
+#include <qtimeline.h>
+#include <qtimezone.h>
+#include "UserTreeNode.h"
 
-Client::Client(QWidget *parent): QMainWindow(parent){
+Client::Client(QWidget *parent) : QMainWindow(parent)
+{
 	ui.setupUi(this);
 	this->ATM = ATMPort();
 	this->userNow = nullptr;
@@ -37,10 +38,11 @@ bool Check_Id_Exist(std::string &lock)
 		read.open("./data/UsersData.txt", std::ios_base::in);
 	}
 	std::string input;
-	while (std::getline(read,input))
+	while (std::getline(read, input))
 	{
 
-		auto  CaptureID = [&input] {
+		auto CaptureID = [&input]
+		{
 			std::string key;
 			for (int i = 0; i < input.size(); i++)
 			{
@@ -76,17 +78,17 @@ void Client::on_RegisteredPushButton_click()
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "输入不能为空", QMessageBox::Ok);
 		msgBox.exec();
 	}
-	else if(password.length() < 6 || password.length() > 12)
+	else if (password.length() < 6 || password.length() > 12)
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "密码应大于5位，并小于13位", QMessageBox::Ok);
 		msgBox.exec();
 	}
-	else if(password != passwordCheck)
+	else if (password != passwordCheck)
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "两次密码输入不一致", QMessageBox::Ok);
 		msgBox.exec();
 	}
-	else if(Check_Id_Exist(id))
+	else if (Check_Id_Exist(id))
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "注册失败", QMessageBox::Ok);
 		msgBox.exec();
@@ -102,7 +104,10 @@ void Client::on_RegisteredPushButton_click()
 		}
 		else
 		{
-			write << id << " " << idCard << " " << password <<" " << "0" << " " << "true" << std::endl;
+			write << id << " " << idCard << " " << password << " "
+				  << "0"
+				  << " "
+				  << "true" << std::endl;
 			write.close();
 			QMessageBox msgBox(QMessageBox::Warning, "SUCCESS", "注册成功", QMessageBox::Ok);
 			msgBox.exec();
@@ -122,7 +127,7 @@ void Client::on_LoadSureButton_click()
 	}
 	else
 	{
-		if (UserLoad(ui.LoadIdInput->text().toStdString(),ui.LoadPasswordInput->text().toStdString(),this->userNow))
+		if (UserLoad(ui.LoadIdInput->text().toStdString(), ui.LoadPasswordInput->text().toStdString(), this->userNow))
 		{
 			ui.RegisteredWindow->show();
 			ui.LoadDashBoadWindow->show();
@@ -138,7 +143,7 @@ void Client::on_LoadSureButton_click()
 			QString cash = QString::fromStdString(process);
 			ui.LoadDashBoardCash->setText(cash);
 
-			if (userNow->Gain_User_State()==true)
+			if (userNow->Gain_User_State() == true)
 			{
 				ui.LoadDashBoardState->setText("该用户已激活");
 			}
@@ -152,7 +157,7 @@ void Client::on_LoadSureButton_click()
 		}
 		else
 		{
-			if (this->userNow!=nullptr)
+			if (this->userNow != nullptr)
 			{
 				QMessageBox msgBox(QMessageBox::Question, "ERROR", "密码错误", QMessageBox::Ok);
 				msgBox.exec();
@@ -182,20 +187,20 @@ void Client::on_UserExitButton_click()
 	write.open("./data/UsersData.txt", std::ios_base::app);
 	if (userNow->Gain_User_State() == true)
 	{
-		write << userNow->Gain_User_Id() << " " << userNow->Gain_User_IdentityCard() << " " <<
-			userNow->Gain_User_Password() << " " << process << " " << "true" << std::endl;
+		write << userNow->Gain_User_Id() << " " << userNow->Gain_User_IdentityCard() << " " << userNow->Gain_User_Password() << " " << process << " "
+			  << "true" << std::endl;
 	}
 	else
 	{
-		write << userNow->Gain_User_Id() << " " << userNow->Gain_User_IdentityCard() << " " <<
-			userNow->Gain_User_Password() << " " << process << " " << "false" << std::endl;
+		write << userNow->Gain_User_Id() << " " << userNow->Gain_User_IdentityCard() << " " << userNow->Gain_User_Password() << " " << process << " "
+			  << "false" << std::endl;
 	}
 	write.close();
 }
 
 void Client::on_WithdrawalPushButton_click()
 {
-	if (userNow->Gain_User_State()==false)
+	if (userNow->Gain_User_State() == false)
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "存款失败，该用户已被冻结", QMessageBox::Ok);
 		msgBox.exec();
@@ -294,17 +299,17 @@ void Client::on_ChangePasswordPushButton_click()
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，账号输入错误", QMessageBox::Ok);
 		msgBox.exec();
 	}
-	else if(oldPassword != userNow->Gain_User_Password())
+	else if (oldPassword != userNow->Gain_User_Password())
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，原密码输入错误", QMessageBox::Ok);
 		msgBox.exec();
 	}
-	else if(newPassword.length() < 6 || newPassword.length()>12)
+	else if (newPassword.length() < 6 || newPassword.length() > 12)
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，密码应大于5位并小于12位", QMessageBox::Ok);
 		msgBox.exec();
 	}
-	else if(newPassword != checkPassowrd)
+	else if (newPassword != checkPassowrd)
 	{
 		QMessageBox msgBox(QMessageBox::Question, "ERROR", "修改失败，两次密码输入错误", QMessageBox::Ok);
 		msgBox.exec();
@@ -386,7 +391,7 @@ void Client::on_UserTransferSurePushButton_click()
 	double cash = ui.USerTransferCash->text().toDouble();
 	auto data = GainUSerData();
 	auto search = data;
-	while (search->next!=nullptr)
+	while (search->next != nullptr)
 	{
 		search = search->next;
 		if (ToId == search->data->Gain_User_Id())
@@ -412,13 +417,13 @@ void Client::on_UserTransferSurePushButton_click()
 						search = search->next;
 						if (search->data->Gain_User_State() == true)
 						{
-							write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-								search->data->Gain_USer_Amount() << " " << "true" << std::endl;
+							write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " << search->data->Gain_USer_Amount() << " "
+								  << "true" << std::endl;
 						}
 						else
 						{
-							write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " <<
-								search->data->Gain_USer_Amount() << " " << "false" << std::endl;
+							write << search->data->Gain_User_Id() << " " << search->data->Gain_User_IdentityCard() << " " << search->data->Gain_User_Password() << " " << search->data->Gain_USer_Amount() << " "
+								  << "false" << std::endl;
 						}
 					}
 					write.close();
@@ -436,7 +441,6 @@ void Client::on_UserTransferSurePushButton_click()
 					writeHistoryFrom.open("./data/" + userNow->Gain_User_Id() + ".txt", std::ios_base::app);
 					writeHistoryFrom << HistoryFrom << std::endl;
 					writeHistoryFrom.close();
-
 				}
 				else
 				{
@@ -476,7 +480,7 @@ void Client::on_UserHistoryPushButton_click()
 	}
 }
 
-std::string GainHistoryString(std::string head, double cash,bool isPlus)
+std::string GainHistoryString(std::string head, double cash, bool isPlus)
 {
 	std::string time = QDateTime::currentDateTime().toString("yyyy-MM-dd-hh:mm:ss").toStdString();
 

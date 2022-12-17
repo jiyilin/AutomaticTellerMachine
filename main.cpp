@@ -1,11 +1,11 @@
-﻿#include"Procedure.h"
+﻿#include "Procedure.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication Demo(argc, argv);
 
-    if (auto* windows=new Procedure)
+    if (auto *windows = new Procedure)
     {
         if (windows->EngineStarts())
         {

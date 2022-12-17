@@ -1,16 +1,18 @@
-﻿#include<fstream>
+﻿#include <fstream>
 #include "Administrator.h"
 
 constexpr auto AdministratorID = "福州大学至诚学院";
 constexpr auto AdministratorPassword = "123456";
 
-Administrator::Administrator(){
+Administrator::Administrator()
+{
 	this->id = AdministratorID;
 	this->password = AdministratorPassword;
 }
 
-bool Administrator::AdminstratorLoad(std::string &name, std::string &key){
-	if (name != this->id || key!=this->password)
+bool Administrator::AdminstratorLoad(std::string &name, std::string &key)
+{
+	if (name != this->id || key != this->password)
 	{
 		return false;
 	}
@@ -18,7 +20,7 @@ bool Administrator::AdminstratorLoad(std::string &name, std::string &key){
 }
 
 bool GainFundsTrackingAnswer(std::string FundsTrackingFrom, std::string FundsTrackingTo,
-							std::string FundsTrackingTime, std::vector<std::list<std::string>>& key)
+							 std::string FundsTrackingTime, std::vector<std::list<std::string>> &key)
 {
 	std::ifstream readMain;
 	readMain.open("./data/" + FundsTrackingFrom + ".txt", std::ios_base::in);
@@ -26,5 +28,7 @@ bool GainFundsTrackingAnswer(std::string FundsTrackingFrom, std::string FundsTra
 	{
 		return false;
 	}
-	return true;
+	std::string remark;
+	std::string amount;
+	std::string time;
 }

@@ -6,7 +6,7 @@
 class Machine
 {
 private:
-	double capitalPools;  // 资金池
+    double capitalPools; // 资金池
 public:
     Machine();
     ~Machine();
@@ -16,7 +16,7 @@ public:
     void EmptyThePool();                 // 清空资金池
 };
 
-//Port
-Machine* ATMPort();
+// Port
+Machine *ATMPort();
 
 #endif // !Machine_H
