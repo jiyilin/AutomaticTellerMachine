@@ -9,7 +9,7 @@ UserTreeNode *SortedUserListToBST(UserList *&lock)
 	{
 		return nullptr;
 	}
-
+	lock = lock->next;
 	auto left = UserList_InitUserList();
 	auto right = UserList_InitUserList();
 
@@ -17,9 +17,8 @@ UserTreeNode *SortedUserListToBST(UserList *&lock)
 	key->data = UserList_gain_center(lock);
 
 	auto search = lock;
-	while (search->next != nullptr)
+	while (search != nullptr)
 	{
-		search = search->next;
 		if (key == nullptr)
 		{
 			break;
@@ -38,6 +37,7 @@ UserTreeNode *SortedUserListToBST(UserList *&lock)
 									search->data->Gain_User_State());
 			UserList_push_back(left, *process);
 		}
+		search = search->next;
 	}
 
 	key->left = SortedUserListToBST(left);
@@ -73,17 +73,25 @@ bool SearchUserTreeNode(UserTreeNode *&lock, std::string eval, User *&key)
 
 bool SearchUserTreeList(UserList *lock, std::string eval, User *&key)
 {
-	while (lock->next != nullptr)
+	//while (lock->next != nullptr)
+	//{
+	//	lock = lock->next;
+	//	if (lock->data->Gain_User_Id() == eval)
+	//	{
+	//		key = lock->data;
+	//		return true;
+	//	}
+	//}
+	//key = nullptr;
+	//return false;
+
+	auto data = SortedUserListToBST(lock);
+	if (!SearchUserTreeNode(data,eval,key))
 	{
-		lock = lock->next;
-		if (lock->data->Gain_User_Id() == eval)
-		{
-			key = lock->data;
-			return true;
-		}
+		key = nullptr;
+		return false;
 	}
-	key = nullptr;
-	return false;
+	return true;
 }
 
 UserList *GainUSerData()

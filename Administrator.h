@@ -18,4 +18,7 @@ public:
 bool GainFundsTrackingAnswer(std::string FundsTrackingFrom,
 							 std::string FundsTrackingTo, std::string FundsTrackingTime,
 							 std::list<std::list<std::string>> &key);
+
+void GainFundsTrackingPROCESS(std::string eval, std::list<std::list<std::string>>& key);
+std::string ChangeHistoryString(std::string &lock);
 #endif // !Administrator_H
