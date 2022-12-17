@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifndef TranserHistory_H
 #define TranserHistory_H

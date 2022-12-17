@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifndef UserTreeNode_H
 #define UserTreeNode_H

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifndef Human_H
 #define Human_H

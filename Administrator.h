@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #ifndef Administrator_H
 #define Administrator_H
