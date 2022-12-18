@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <Windows.h>
+#include<cstdio>
 #include <qmessagebox.h>
 #include <qtimer.h>
 #include <qtimeline.h>
@@ -375,6 +376,8 @@ void Client::on_userLogoutPushButton_click()
 			this->on_UserExitButton_click();
 			this->close();
 			ui.Menu->close();
+			std::string txt = "./data/" + id + ".txt";
+			std::remove(txt.c_str());
 		}
 	}
 	else

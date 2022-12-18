@@ -87,6 +87,13 @@ void AdminSide::on_PoolEmptyButton_click()
 		ATM->EmptyThePool();
 		QMessageBox msgBox1(QMessageBox::Warning, "SUCCESS", "已完成资金库清空", QMessageBox::Ok, this);
 		msgBox1.exec();
+		double process = ATM->Gain_CapitalPools();
+		std::stringstream stream;
+		stream << process;
+		std::string key;
+		stream >> key;
+		ui.PoolExistingFunds->clear();
+		ui.PoolExistingFunds->setText(QString::fromStdString(key));
 	}
 }
 
